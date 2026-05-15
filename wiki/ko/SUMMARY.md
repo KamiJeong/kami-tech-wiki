@@ -10,6 +10,7 @@
 ## OpenUI
 
 * [OpenUI Overview](openui/README.md)
+* [Index](openui/index.md)
 * [Introduction](openui/introduction.md)
 * [Overview](openui/overview.md)
 * [Architecture](openui/architecture.md)
@@ -22,4 +23,3 @@
 * [API Reference Overview](openui/api-reference-overview.md)
 * [API Reference React UI](openui/api-reference-react-ui.md)
 * [Specification V05](openui/specification-v05.md)
-* [Index](openui/index.md)
