@@ -27,10 +27,36 @@
 
 ## English (en)
 
-*(No content yet — add your first source to get started)*
+### OpenUI (Generative UI)
+
+- [[OpenUI Introduction]] — Full-stack Generative UI framework where LLMs generate UI (updated: 2026-05-15, sources: 0)
+- [[OpenUI Overview]] — Library, Prompt Generator, Parser, Renderer — 4 core components (updated: 2026-05-15, sources: 0)
+- [[OpenUI Quick Start]] — Run a GenUI app in 1 minute with `npx @openuidev/cli` (updated: 2026-05-15, sources: 0)
+- [[OpenUI System Prompts]] — Auto-generate LLM prompts from component library (updated: 2026-05-15, sources: 0)
+- [[OpenUI Benchmarks]] — Up to 67% fewer tokens vs JSON — performance comparison (updated: 2026-05-15, sources: 0)
+- [[OpenUI Architecture]] — Library→Prompt→LLM→Parser→Renderer pipeline in detail (updated: 2026-05-15, sources: 0)
+- [[OpenUI Lang Specification v0.5]] — Reactive state, queries, mutations — full spec (updated: 2026-05-15, sources: 0)
+- [[Example: Vercel AI Chat]] — Next.js + Vercel AI SDK + OpenUI complete example (updated: 2026-05-15, sources: 0)
+- [[OpenUI Chat SDK Introduction]] — Headless chat state management and layout components (updated: 2026-05-15, sources: 0)
+- [[OpenUI Chat GenUI]] — Chat-optimized `openuiChatLibrary` components (updated: 2026-05-15, sources: 0)
+- [[OpenUI API Reference Overview]] — Full reference for 5 packages and CLI tool (updated: 2026-05-15, sources: 0)
+- [[@openuidev/react-ui API]] — FullScreen, Copilot, BottomTray layout component API (updated: 2026-05-15, sources: 0)
 
 ---
 
 ## 日本語 (ja)
 
-*(まだコンテンツがありません)*
+### OpenUI (Generative UI)
+
+- [[OpenUI 紹介]] — LLMがUIを生成するフルスタックGenerative UIフレームワーク (updated: 2026-05-15, sources: 0)
+- [[OpenUI 概要]] — Library、Prompt Generator、Parser、Renderer — 4つのコアコンポーネント (updated: 2026-05-15, sources: 0)
+- [[OpenUI クイックスタート]] — `npx @openuidev/cli`で1分以内にGenUIアプリを起動 (updated: 2026-05-15, sources: 0)
+- [[OpenUI システムプロンプト]] — コンポーネントライブラリからLLMプロンプトを自動生成 (updated: 2026-05-15, sources: 0)
+- [[OpenUI ベンチマーク]] — JSONと比べて最大67%少ないトークン — パフォーマンス比較 (updated: 2026-05-15, sources: 0)
+- [[OpenUI アーキテクチャ]] — Library→Prompt→LLM→Parser→Rendererパイプラインの詳細 (updated: 2026-05-15, sources: 0)
+- [[OpenUI Lang 仕様 v0.5]] — リアクティブState、クエリ、ミューテーション — 完全仕様 (updated: 2026-05-15, sources: 0)
+- [[サンプル: Vercel AI Chat]] — Next.js + Vercel AI SDK + OpenUI完全なサンプル (updated: 2026-05-15, sources: 0)
+- [[OpenUI Chat SDK 紹介]] — ヘッドレスチャット状態管理とレイアウトコンポーネント (updated: 2026-05-15, sources: 0)
+- [[OpenUI Chat GenUI]] — チャット最適化`openuiChatLibrary`コンポーネント (updated: 2026-05-15, sources: 0)
+- [[OpenUI APIリファレンス概要]] — 5つのパッケージとCLIツールの完全リファレンス (updated: 2026-05-15, sources: 0)
+- [[@openuidev/react-ui API]] — FullScreen、Copilot、BottomTrayレイアウトコンポーネントAPI (updated: 2026-05-15, sources: 0)
