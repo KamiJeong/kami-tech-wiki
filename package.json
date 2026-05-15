@@ -1,0 +1,14 @@
+{
+  "name": "kami-tech-wiki",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "bun test",
+    "test:slack": "bun test .wiki/scripts/notify-slack.test.ts",
+    "notify": "bun run .wiki/scripts/notify-slack.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "typescript": "6.0.3"
+  }
+}

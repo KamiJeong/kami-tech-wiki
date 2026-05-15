@@ -121,7 +121,7 @@ hooks:
   - extension: token-analyzer
     command: speckit.token-analyzer.baseline
     enabled: true
-    optional: true
+    optional: false
     prompt: Capture token metrics from specification?
     description: Capture token metrics after specification generation
     condition: null
@@ -144,7 +144,7 @@ hooks:
   - extension: token-analyzer
     command: speckit.token-analyzer.baseline
     enabled: true
-    optional: true
+    optional: false
     prompt: Capture token metrics from planning?
     description: Capture token metrics after implementation planning
     condition: null
@@ -166,7 +166,7 @@ hooks:
   - extension: token-analyzer
     command: speckit.token-analyzer.baseline
     enabled: true
-    optional: true
+    optional: false
     prompt: Capture token metrics from task generation?
     description: Capture token metrics after task generation
     condition: null
@@ -209,7 +209,7 @@ hooks:
   - extension: token-analyzer
     command: speckit.token-analyzer.baseline
     enabled: true
-    optional: true
+    optional: false
     prompt: Capture token metrics from implementation?
     description: Capture token metrics after implementation
     condition: null
