@@ -2,6 +2,8 @@
 
 > LLM이 관리하는 개인 테크 위키 카탈로그입니다. 인제스트할 때마다 자동 업데이트됩니다.
 
+> **GitBook 연동**: 각 로케일 디렉토리(`wiki/ko`, `wiki/en`, `wiki/ja`)는 GitBook Git Sync를 통해 각각의 GitBook Space와 동기화됩니다. GitHub가 단일 원본(Source of Truth)이며, GitBook은 문서 뷰어로만 사용됩니다. 각 로케일 디렉토리에 `.gitbook.yaml`, `README.md`, `SUMMARY.md`가 포함되어 있습니다.
+
 ---
 
 ## 한국어 (ko)

@@ -1,7 +1,7 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan:
-specs/004-openui-docs/plan.md
+specs/006-gitbook-wiki-ready/plan.md
 <!-- SPECKIT END -->
 
 # kami-tech-wiki — LLM 동작 스키마
