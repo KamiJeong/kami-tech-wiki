@@ -22,16 +22,16 @@ hooks:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit outstanding changes before clarification?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit before spec clarification
     condition: null
   before_plan:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit outstanding changes before planning?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit before implementation planning
     condition: null
   - extension: version-guard
@@ -45,8 +45,8 @@ hooks:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit outstanding changes before task generation?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit before task generation
     condition: null
   - extension: docguard
@@ -67,8 +67,8 @@ hooks:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit outstanding changes before implementation?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit before implementation
     condition: null
   - extension: version-guard
@@ -82,78 +82,78 @@ hooks:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit outstanding changes before checklist?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit before checklist generation
     condition: null
   before_analyze:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit outstanding changes before analysis?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit before analysis
     condition: null
   before_taskstoissues:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit outstanding changes before issue sync?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit before tasks-to-issues conversion
     condition: null
   after_constitution:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit constitution changes?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after constitution update
     condition: null
   after_specify:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit specification changes?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after specification
     condition: null
   - extension: token-analyzer
     command: speckit.token-analyzer.baseline
     enabled: true
     optional: false
-    prompt: Capture token metrics from specification?
+    prompt: Execute speckit.token-analyzer.baseline
     description: Capture token metrics after specification generation
     condition: null
   after_clarify:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit clarification changes?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after spec clarification
     condition: null
   after_plan:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit plan changes?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after implementation planning
     condition: null
   - extension: token-analyzer
     command: speckit.token-analyzer.baseline
     enabled: true
     optional: false
-    prompt: Capture token metrics from planning?
+    prompt: Execute speckit.token-analyzer.baseline
     description: Capture token metrics after implementation planning
     condition: null
   after_tasks:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit task changes?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after task generation
     condition: null
   - extension: docguard
@@ -167,15 +167,15 @@ hooks:
     command: speckit.token-analyzer.baseline
     enabled: true
     optional: false
-    prompt: Capture token metrics from task generation?
+    prompt: Execute speckit.token-analyzer.baseline
     description: Capture token metrics after task generation
     condition: null
   after_implement:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit implementation changes?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after implementation
     condition: null
   - extension: docguard
@@ -210,30 +210,30 @@ hooks:
     command: speckit.token-analyzer.baseline
     enabled: true
     optional: false
-    prompt: Capture token metrics from implementation?
+    prompt: Execute speckit.token-analyzer.baseline
     description: Capture token metrics after implementation
     condition: null
   after_checklist:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit checklist changes?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after checklist generation
     condition: null
   after_analyze:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit analysis results?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after analysis
     condition: null
   after_taskstoissues:
   - extension: git
     command: speckit.git.commit
     enabled: true
-    optional: true
-    prompt: Commit after syncing issues?
+    optional: false
+    prompt: Execute speckit.git.commit
     description: Auto-commit after tasks-to-issues conversion
     condition: null

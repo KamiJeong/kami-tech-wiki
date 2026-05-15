@@ -1,0 +1,38 @@
+name: Wiki Validation
+
+on:
+  pull_request:
+    paths:
+      - 'wiki/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'wiki/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Markdown lint
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: 'wiki/**/*.md'
+          config: 'wiki/.markdownlint.yaml'
+
+      - name: Check broken links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --no-progress
+            --include-verbatim
+            --offline
+            wiki/**/*.md
+          fail: true
+
+      - name: Wiki structural validation
+        run: bash .wiki/scripts/validate-wiki.sh
