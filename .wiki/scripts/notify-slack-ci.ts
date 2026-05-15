@@ -38,6 +38,18 @@ export interface SlackWebhookPayload {
 
 const MAX_FILES = 10;
 
+export function detectWikiIngest(created: string[]): string[] {
+  return created.filter(
+    (f) => f.startsWith("wiki/ko/") && !f.endsWith("index.md") && !f.endsWith("log.md"),
+  );
+}
+
+export function buildWikiIngestField(wikiFiles: string[]): SlackField {
+  const sections = [...new Set(wikiFiles.map((f) => f.split("/")[2]).filter(Boolean))];
+  const summary = `${wikiFiles.length}개 페이지 — ${sections.join(", ")} 섹션`;
+  return { type: "mrkdwn", text: `*Wiki 인제스트:*\n${summary}` };
+}
+
 export function buildChangeSummary(env: NodeJS.ProcessEnv): ChangeSummary {
   const parse = (val: string | undefined): string[] =>
     (val ?? "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -85,6 +97,18 @@ export function buildPayload(
     new Date(event.timestamp).toISOString().replace("T", " ").slice(0, 16) +
     " UTC";
 
+  const fields: SlackField[] = [
+    { type: "mrkdwn", text: `*Status:*\nSuccess` },
+    { type: "mrkdwn", text: `*Time:*\n${timeDisplay}` },
+    { type: "mrkdwn", text: `*System:*\nKami Tech` },
+    { type: "mrkdwn", text: `*Details:*\n${formatDetails(summary)}` },
+  ];
+
+  const wikiFiles = detectWikiIngest(summary.created);
+  if (wikiFiles.length > 0) {
+    fields.push(buildWikiIngestField(wikiFiles));
+  }
+
   return {
     text: `Kami Tech — Main branch updated by ${event.author} (${event.shortSha})`,
     blocks: [
@@ -97,12 +121,7 @@ export function buildPayload(
       },
       {
         type: "section",
-        fields: [
-          { type: "mrkdwn", text: `*Status:*\nSuccess` },
-          { type: "mrkdwn", text: `*Time:*\n${timeDisplay}` },
-          { type: "mrkdwn", text: `*System:*\nKami Tech` },
-          { type: "mrkdwn", text: `*Details:*\n${formatDetails(summary)}` },
-        ],
+        fields,
       },
     ],
   };
@@ -111,8 +130,8 @@ export function buildPayload(
 export async function notify(payload: SlackWebhookPayload): Promise<void> {
   const webhookUrl = process.env.SLACK_WEBHOOK_URL;
   if (!webhookUrl) {
-    console.error("Error: SLACK_WEBHOOK_URL environment variable is not set.");
-    process.exit(1);
+    console.warn("Warning: SLACK_WEBHOOK_URL is not set — skipping Slack notification.");
+    return;
   }
 
   const post = (): Promise<Response> =>
