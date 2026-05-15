@@ -108,7 +108,7 @@ A contributor who adds a new article to one locale (e.g., Korean) is warned when
 - **FR-009**: A validation script MUST verify that every link in each `SUMMARY.md` points to a file that exists on disk.
 - **FR-010**: A validation script MUST verify that for every article in one locale, equivalent paths exist in all other locales.
 - **FR-011**: A GitHub Actions workflow MUST run validation on `pull_request` and on `push` to `main`, triggered only when files under `wiki/**` change.
-- **FR-012**: The GitHub Actions workflow MUST check markdown formatting, broken links in `SUMMARY.md`, SUMMARY.md coverage, missing locale counterpart files, and missing category `README.md` files.
+- **FR-012**: The GitHub Actions workflow MUST check markdown formatting (style and formatting rules only — structural rules such as single-H1 are disabled for ingested content), broken links in `SUMMARY.md`, SUMMARY.md coverage, missing locale counterpart files, and missing category `README.md` files.
 - **FR-013**: Category folders that contain only `.gitkeep` and no real `.md` articles MUST be excluded from `SUMMARY.md` and MUST NOT trigger validation failures.
 - **FR-014**: Existing files in `wiki/ko`, `wiki/en`, and `wiki/ja` MUST NOT be moved, renamed, or deleted as part of this feature.
 
@@ -143,3 +143,10 @@ A contributor who adds a new article to one locale (e.g., Korean) is warned when
 - The validation scripts run in a standard POSIX shell environment available in GitHub Actions (Ubuntu runner).
 - Article filenames follow the pattern `NNN-slug.md` or plain `slug.md`; filenames with spaces are treated as warnings, not failures.
 - The `wiki/index.md` and `wiki/log.md` at the root of `wiki/` are not part of any GitBook Space and are excluded from locale validation.
+- Ingested wiki articles (sourced from official third-party documentation) may contain multiple H1 headings by design; markdown linting enforces style/formatting rules only and does not require structural H1 conformance on pre-existing ingested content.
+
+## Clarifications
+
+### Session 2026-05-15
+
+- Q: Should structural rules like MD025 (single H1) apply to ingested wiki articles, or only formatting/style rules? → A: Formatting/style rules only — MD025 and related structural/style rules (MD024, MD028, MD031, MD032, MD040, MD060) are disabled globally because ingested technical docs do not conform to strict authoring conventions.
