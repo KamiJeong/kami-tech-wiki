@@ -4,6 +4,8 @@ import {
   formatDetails,
   buildPayload,
   notify,
+  detectWikiIngest,
+  buildWikiIngestField,
   type ChangeSummary,
   type MergeEvent,
 } from "./notify-slack-ci";
@@ -171,23 +173,94 @@ describe("buildPayload", () => {
   });
 });
 
-// ── notify — missing SLACK_WEBHOOK_URL (T011) ──────────────────────────────
+// ── detectWikiIngest ───────────────────────────────────────────────────────
+
+describe("detectWikiIngest", () => {
+  it("returns wiki/ko/ files excluding index.md and log.md", () => {
+    const created = [
+      "wiki/ko/openui/introduction.md",
+      "wiki/ko/openui/overview.md",
+      "wiki/ko/openui/index.md",
+      "wiki/log.md",
+      "wiki/index.md",
+      "specs/plan.md",
+    ];
+    const result = detectWikiIngest(created);
+    expect(result).toEqual([
+      "wiki/ko/openui/introduction.md",
+      "wiki/ko/openui/overview.md",
+    ]);
+  });
+
+  it("returns empty array when no wiki/ko/ files created", () => {
+    expect(detectWikiIngest(["specs/plan.md", "wiki/index.md"])).toEqual([]);
+  });
+
+  it("returns empty array for empty input", () => {
+    expect(detectWikiIngest([])).toEqual([]);
+  });
+});
+
+// ── buildWikiIngestField ───────────────────────────────────────────────────
+
+describe("buildWikiIngestField", () => {
+  it("includes page count and section names", () => {
+    const files = [
+      "wiki/ko/openui/introduction.md",
+      "wiki/ko/openui/overview.md",
+      "wiki/ko/claude/overview.md",
+    ];
+    const field = buildWikiIngestField(files);
+    expect(field.type).toBe("mrkdwn");
+    expect(field.text).toContain("3개 페이지");
+    expect(field.text).toContain("openui");
+    expect(field.text).toContain("claude");
+  });
+
+  it("deduplicates section names", () => {
+    const files = [
+      "wiki/ko/openui/a.md",
+      "wiki/ko/openui/b.md",
+    ];
+    const field = buildWikiIngestField(files);
+    const openui_count = (field.text.match(/openui/g) ?? []).length;
+    expect(openui_count).toBe(1);
+  });
+});
+
+// ── buildPayload — wiki ingest field ──────────────────────────────────────
+
+describe("buildPayload with wiki ingest", () => {
+  it("adds wiki ingest field when wiki/ko/ files are created", () => {
+    const summary: ChangeSummary = {
+      ...emptySummary,
+      created: ["wiki/ko/openui/introduction.md", "wiki/ko/openui/overview.md"],
+      totalCount: 2,
+    };
+    const payload = buildPayload(baseEvent, summary);
+    expect(payload.blocks[1].fields).toHaveLength(5);
+    const lastField = payload.blocks[1].fields[4];
+    expect(lastField.text).toContain("Wiki 인제스트");
+  });
+
+  it("does not add wiki ingest field when no wiki/ko/ files created", () => {
+    const payload = buildPayload(baseEvent, emptySummary);
+    expect(payload.blocks[1].fields).toHaveLength(4);
+  });
+});
+
+// ── notify — missing SLACK_WEBHOOK_URL ────────────────────────────────────
 
 describe("notify", () => {
   afterEach(() => {
     process.env.SLACK_WEBHOOK_URL = undefined as unknown as string;
   });
 
-  it("exits 1 when SLACK_WEBHOOK_URL is not set", async () => {
+  it("skips notification gracefully when SLACK_WEBHOOK_URL is not set", async () => {
     delete process.env.SLACK_WEBHOOK_URL;
 
-    const exitSpy = spyOn(process, "exit").mockImplementation(() => {
-      throw new Error("process.exit(1)");
-    });
-
     const dummyPayload = buildPayload(baseEvent, emptySummary);
-    await expect(notify(dummyPayload)).rejects.toThrow("process.exit(1)");
-
-    exitSpy.mockRestore();
+    // Should resolve without throwing (no process.exit)
+    await expect(notify(dummyPayload)).resolves.toBeUndefined();
   });
 });
