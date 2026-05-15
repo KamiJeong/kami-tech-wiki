@@ -1,7 +1,7 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan:
-specs/001-project-initial-setup/plan.md
+specs/003-slack-webhook-github-actions/plan.md
 <!-- SPECKIT END -->
 
 # kami-tech-wiki — LLM 동작 스키마
