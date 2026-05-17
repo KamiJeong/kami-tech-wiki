@@ -1,0 +1,23 @@
+{
+  "run_label": "after-implement-007",
+  "scenario": "Post-implementation baseline capture for feature 007-codex-cli-docs",
+  "preset": "standard",
+  "model": "unknown",
+  "timestamp": "2026-05-17T23:28:56Z",
+  "step_count": 1,
+  "tokens": {
+    "total_input": 0,
+    "total_output": 0,
+    "total": 0,
+    "cache_read": 0,
+    "cache_creation": 0
+  },
+  "steps": [
+    {
+      "command": "unknown",
+      "input": 0,
+      "output": 0,
+      "total": 0
+    }
+  ]
+}

@@ -24,3 +24,11 @@
 - wiki/en/openui/ — OpenUI Lang(Introduction·Overview·QuickStart·SystemPrompts·Benchmarks·Architecture·Spec v0.5), Examples(Vercel AI Chat), Chat SDK(Introduction·GenUI), API Reference(Overview·react-ui)
 - wiki/ja/openui/ — OpenUI Lang(紹介·概要·クイックスタート·システムプロンプト·ベンチマーク·アーキテクチャ·仕様v0.5), Examples(Vercel AI Chat), Chat SDK(紹介·GenUI), API Reference(概要·react-ui)
 총 26개 파일 생성 (각 언어 index.md 포함). wiki/index.md에 English·日本語 섹션 추가 완료.
+
+## [2026-05-15 00:00] ingest | Codex CLI
+
+인제스트 범위:
+- wiki/ko/codex-cli/index.md — OpenAI Codex CLI 한국어 문서 (source_count: 0)
+- wiki/en/codex-cli/index.md — OpenAI Codex CLI English documentation (source_count: 0)
+- wiki/ja/codex-cli/index.md — OpenAI Codex CLI 日本語ドキュメント (source_count: 0)
+총 3개 파일 생성. wiki/index.md에 한국어·English·日本語 Codex CLI 섹션 추가 완료.

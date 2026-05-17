@@ -18,3 +18,8 @@
 * [API Reference Overview](openui/api-reference-overview.md)
 * [API Reference React UI](openui/api-reference-react-ui.md)
 * [Specification V05](openui/specification-v05.md)
+
+## Codex CLI
+
+* [Codex CLI Overview](codex-cli/README.md)
+* [Codex CLI](codex-cli/index.md)
