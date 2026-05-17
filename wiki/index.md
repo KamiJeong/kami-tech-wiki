@@ -25,6 +25,10 @@
 - [[OpenUI API 레퍼런스 개요]] — 5개 패키지 및 CLI 도구 전체 참조 (updated: 2026-05-15, sources: 0)
 - [[@openuidev/react-ui API]] — FullScreen, Copilot, BottomTray 레이아웃 컴포넌트 API (updated: 2026-05-15, sources: 0)
 
+### Codex CLI
+
+- [[Codex CLI]] — OpenAI의 터미널 기반 AI 코딩 에이전트. 승인 모드·슬래시 명령·이미지 분석 지원 (updated: 2026-05-15, sources: 0)
+
 ---
 
 ## English (en)
@@ -44,6 +48,10 @@
 - [[OpenUI API Reference Overview]] — Full reference for 5 packages and CLI tool (updated: 2026-05-15, sources: 0)
 - [[@openuidev/react-ui API]] — FullScreen, Copilot, BottomTray layout component API (updated: 2026-05-15, sources: 0)
 
+### Codex CLI
+
+- [[Codex CLI]] — Terminal-based AI coding agent by OpenAI. Supports approval modes, slash commands, and image analysis (updated: 2026-05-15, sources: 0)
+
 ---
 
 ## 日本語 (ja)
@@ -62,3 +70,7 @@
 - [[OpenUI Chat GenUI]] — チャット最適化`openuiChatLibrary`コンポーネント (updated: 2026-05-15, sources: 0)
 - [[OpenUI APIリファレンス概要]] — 5つのパッケージとCLIツールの完全リファレンス (updated: 2026-05-15, sources: 0)
 - [[@openuidev/react-ui API]] — FullScreen、Copilot、BottomTrayレイアウトコンポーネントAPI (updated: 2026-05-15, sources: 0)
+
+### Codex CLI
+
+- [[Codex CLI]] — OpenAIのターミナルベースAIコーディングエージェント。承認モード、スラッシュコマンド、画像解析をサポート (updated: 2026-05-15, sources: 0)

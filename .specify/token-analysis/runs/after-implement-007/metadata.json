@@ -1,0 +1,8 @@
+{
+  "run_label": "after-implement-007",
+  "scenario": "Post-implementation baseline capture for feature 007-codex-cli-docs",
+  "preset": "standard",
+  "integration": "claude-code",
+  "timestamp": "2026-05-18T00:00:00Z",
+  "commands": ["implement"]
+}
