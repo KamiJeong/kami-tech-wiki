@@ -33,6 +33,15 @@
 - wiki/ja/codex-cli/index.md — OpenAI Codex CLI 日本語ドキュメント (source_count: 0)
 총 3개 파일 생성. wiki/index.md에 한국어·English·日本語 Codex CLI 섹션 추가 완료.
 
+## [2026-05-18 11:00] ingest | Codex 101 Tutorial Wiki — Bilingual developer guide (ko/en)
+
+인제스트 범위:
+- wiki/ko/codex/101.md — Codex 101 한국어 실전 가이드: 설치·인증·승인 모드·슬래시 명령·AGENTS.md·설정·MCP·자동화 패턴·워크플로우 (source_count: 1)
+- wiki/en/codex/101.md — Codex 101 English developer tutorial: setup, authentication, approval modes, slash commands, AGENTS.md, config, MCP, automation patterns, workflow guide (source_count: 1)
+총 2개 파일 생성. wiki/index.md에 한국어·English Codex 101 항목 추가. ko/SUMMARY.md, en/SUMMARY.md 업데이트 완료.
+Source: https://openai.com/codex
+Safety-sensitive slice: authentication, approval-mode 콘텐츠 포함.
+
 ## [2026-05-18 10:00] ingest | Codex Overview Wiki — What is Codex (ko/en/ja)
 
 인제스트 범위:

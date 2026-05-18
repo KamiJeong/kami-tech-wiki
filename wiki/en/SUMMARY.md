@@ -23,6 +23,7 @@
 
 * [Codex Overview](codex/README.md)
 * [What is Codex](codex/index.md)
+* [Codex 101](codex/101.md)
 
 ## Codex CLI
 
