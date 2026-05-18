@@ -19,6 +19,11 @@
 * [API Reference React UI](openui/api-reference-react-ui.md)
 * [Specification V05](openui/specification-v05.md)
 
+## Codex
+
+* [Codex 概要](codex/README.md)
+* [Codexとは](codex/index.md)
+
 ## Codex CLI
 
 * [Codex CLI 概要](codex-cli/README.md)
