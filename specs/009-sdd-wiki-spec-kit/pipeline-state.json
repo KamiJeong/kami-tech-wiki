@@ -1,0 +1,9 @@
+{
+  "feature_dir": "specs/009-sdd-wiki-spec-kit",
+  "mode": "auto-implement",
+  "stage": "specify",
+  "status": "running",
+  "blocked_reason": null,
+  "timestamp": "2026-05-18T00:01:00Z",
+  "stages_completed": ["specify"]
+}
