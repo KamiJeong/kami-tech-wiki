@@ -3,7 +3,7 @@
   "description": "Create the initial GitBook documentation structure for Tech Bridge Book. The documentation should teach AI and practical technology to non-developers from beginner level to real-world work application. Create a multilingual structure for Korean, English, and Japanese. Include: landing page, introduction page, curriculum overview, learner guide, glossary, lesson template, exercise template, thinking question template, AI safety and privacy guide, chapter structure from beginner to practical work usage. Do not write full lesson content yet. First create the information architecture, folder structure, and template files only.",
   "strategy": "foundation-first-then-parallel",
   "created_at": "2026-05-18T00:00:00Z",
-  "updated_at": "2026-05-18T00:00:00Z",
+  "updated_at": "2026-05-18T12:00:00Z",
   "slices": {
     "ia-scaffold": {
       "id": "ia-scaffold",
@@ -59,15 +59,15 @@
       "description": "Create the standalone AI safety and privacy guide page covering responsible AI usage guidelines for non-developer learners.",
       "feature_dir": "specs/017-safety-privacy-guide",
       "branch": "017-safety-privacy-guide",
-      "state": "running",
-      "pipeline_stage": "implement",
+      "state": "completed",
+      "pipeline_stage": "done",
       "depends_on": ["ia-scaffold"],
       "conflicts_with": [],
       "is_safety_sensitive": false,
-      "pr_url": null,
-      "pr_base_branch": null,
+      "pr_url": "https://github.com/KamiJeong/kami-tech-wiki/pull/18",
+      "pr_base_branch": "014-ia-scaffold",
       "test_results_path": null,
-      "commit_sha": null
+      "commit_sha": "e74f477"
     },
     "chapter-structure": {
       "id": "chapter-structure",
@@ -75,15 +75,15 @@
       "description": "Create stub chapter directories and index files from beginner level through practical work usage, with glossary pages, for all three languages.",
       "feature_dir": "specs/018-chapter-structure",
       "branch": "018-chapter-structure",
-      "state": "pending",
-      "pipeline_stage": "plan-complete",
+      "state": "completed",
+      "pipeline_stage": "done",
       "depends_on": ["ia-scaffold"],
       "conflicts_with": [],
       "is_safety_sensitive": false,
-      "pr_url": null,
-      "pr_base_branch": null,
+      "pr_url": "https://github.com/KamiJeong/kami-tech-wiki/pull/19",
+      "pr_base_branch": "014-ia-scaffold",
       "test_results_path": null,
-      "commit_sha": null
+      "commit_sha": "00a3306"
     }
   },
   "batches": [
