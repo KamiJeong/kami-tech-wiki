@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(specs/**)",
+      "Write(.claude/**)",
+      "Bash(.specify/**)",
+      "Bash(.claude/skills/speckit-guards/scripts/**)"
+    ]
+  }
+}
