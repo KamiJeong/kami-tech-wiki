@@ -23,3 +23,18 @@
 
 * [Codex CLI Overview](codex-cli/README.md)
 * [Codex CLI](codex-cli/index.md)
+
+## SDD (Spec-Driven Development)
+
+* [SDD Overview](sdd/README.md)
+* [Spec-Driven Development](sdd/index.md)
+
+## Kiro
+
+* [Kiro Overview](kiro/README.md)
+* [Kiro](kiro/index.md)
+
+## Spec-Kit
+
+* [Spec-Kit Overview](spec-kit/README.md)
+* [Spec-Kit](spec-kit/index.md)

@@ -29,6 +29,18 @@
 
 - [[Codex CLI]] — OpenAI의 터미널 기반 AI 코딩 에이전트. 승인 모드·슬래시 명령·이미지 분석 지원 (updated: 2026-05-15, sources: 0)
 
+### SDD (Spec-Driven Development)
+
+- [[Spec-Driven Development (SDD)]] — 코드 작성 전에 명세를 먼저 정의하는 개발 방법론. BDD/TDD와의 비교 및 Kiro·Spec-Kit 연결 (updated: 2026-05-18, sources: 0)
+
+### Kiro
+
+- [[Kiro]] — AWS AI 기반 IDE. 스티어링 파일·스펙 문서·에이전트 태스크·오토파일럿 모드로 SDD를 IDE 수준에서 구현 (updated: 2026-05-18, sources: 0)
+
+### Spec-Kit
+
+- [[Spec-Kit]] — Claude Code 기반 SDD 워크플로우 도구. specify→clarify→plan→tasks→implement→verify 6단계 파이프라인 (updated: 2026-05-18, sources: 8)
+
 ---
 
 ## English (en)
@@ -52,6 +64,18 @@
 
 - [[Codex CLI]] — Terminal-based AI coding agent by OpenAI. Supports approval modes, slash commands, and image analysis (updated: 2026-05-15, sources: 0)
 
+### SDD (Spec-Driven Development)
+
+- [[Spec-Driven Development (SDD)]] — Methodology where specs are written before code. Covers BDD/TDD comparison and Kiro/Spec-Kit connections (updated: 2026-05-18, sources: 0)
+
+### Kiro
+
+- [[Kiro]] — AWS AI-powered IDE. Implements SDD through steering files, spec documents, agent tasks, and autopilot mode (updated: 2026-05-18, sources: 0)
+
+### Spec-Kit
+
+- [[Spec-Kit]] — Claude Code SDD workflow tool. specify→clarify→plan→tasks→implement→verify six-stage pipeline (updated: 2026-05-18, sources: 8)
+
 ---
 
 ## 日本語 (ja)
@@ -74,3 +98,15 @@
 ### Codex CLI
 
 - [[Codex CLI]] — OpenAIのターミナルベースAIコーディングエージェント。承認モード、スラッシュコマンド、画像解析をサポート (updated: 2026-05-15, sources: 0)
+
+### SDD (Spec-Driven Development)
+
+- [[Spec-Driven Development (SDD)]] — コードを書く前に仕様を先に定義する開発手法。BDD/TDDとの比較およびKiro・Spec-Kitとの連携を網羅 (updated: 2026-05-18, sources: 0)
+
+### Kiro
+
+- [[Kiro]] — AWS AI搭載IDE。スティアリングファイル・スペックドキュメント・エージェントタスク・オートパイロットモードでSSDをIDE水準で実装 (updated: 2026-05-18, sources: 0)
+
+### Spec-Kit
+
+- [[Spec-Kit]] — Claude Code SDDワークフローツール。specify→clarify→plan→tasks→implement→verify の6段階パイプライン (updated: 2026-05-18, sources: 8)

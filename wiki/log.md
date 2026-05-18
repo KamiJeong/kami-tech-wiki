@@ -32,3 +32,17 @@
 - wiki/en/codex-cli/index.md — OpenAI Codex CLI English documentation (source_count: 0)
 - wiki/ja/codex-cli/index.md — OpenAI Codex CLI 日本語ドキュメント (source_count: 0)
 총 3개 파일 생성. wiki/index.md에 한국어·English·日本語 Codex CLI 섹션 추가 완료.
+
+## [2026-05-18 09:00] ingest | SDD Wiki — Spec-Driven Development, Kiro, and Spec-Kit
+
+인제스트 범위:
+- wiki/ko/sdd/ — Spec-Driven Development 한국어 개념 문서 (source_count: 0)
+- wiki/en/sdd/ — Spec-Driven Development English concept article (source_count: 0)
+- wiki/ja/sdd/ — Spec-Driven Development 日本語概念記事 (source_count: 0)
+- wiki/ko/kiro/ — Kiro IDE 한국어 도구 문서 (source_count: 0)
+- wiki/en/kiro/ — Kiro IDE English tool article (source_count: 0)
+- wiki/ja/kiro/ — Kiro IDE 日本語ツール記事 (source_count: 0)
+- wiki/ko/spec-kit/ — Spec-Kit 한국어 도구 문서 (source_count: 8)
+- wiki/en/spec-kit/ — Spec-Kit English tool article (source_count: 8)
+- wiki/ja/spec-kit/ — Spec-Kit 日本語ツール記事 (source_count: 8)
+총 18개 파일 생성 (각 토픽별 README.md + index.md × 3언어). wiki/index.md에 한국어·English·日本語 SDD·Kiro·Spec-Kit 섹션 추가. 각 로케일 SUMMARY.md 업데이트 완료.
