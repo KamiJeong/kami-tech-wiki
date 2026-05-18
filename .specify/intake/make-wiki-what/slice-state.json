@@ -3,7 +3,7 @@
   "description": "make Wiki, What is Codex and how to use it with document('https://openai.com/codex') and make wiki for codex 101 — Codex 101 began in February 2026 as a fact-based Korean developer resource and grew into a bilingual Korean and English tutorial site for developers who want a practical introduction to Codex. It brings setup, authentication, approval modes, slash commands, AGENTS.md, config, MCP, automation patterns, and workflow guidance into one structured guide.",
   "strategy": "foundation-first-then-parallel",
   "created_at": "2026-05-18T00:00:00Z",
-  "updated_at": "2026-05-18T00:00:00Z",
+  "updated_at": "2026-05-18T11:30:00Z",
   "slices": {
     "codex-overview-slice": {
       "id": "codex-overview-slice",
@@ -11,15 +11,15 @@
       "description": "Create a wiki page explaining what Codex is, sourced from the official OpenAI Codex documentation at https://openai.com/codex.",
       "feature_dir": "specs/012-codex-overview-slice",
       "branch": "012-codex-overview-slice",
-      "state": "running",
-      "pipeline_stage": "implement",
+      "state": "completed",
+      "pipeline_stage": "review",
       "depends_on": [],
       "conflicts_with": [],
       "is_safety_sensitive": false,
-      "pr_url": null,
-      "pr_base_branch": null,
+      "pr_url": "https://github.com/KamiJeong/kami-tech-wiki/pull/13",
+      "pr_base_branch": "main",
       "test_results_path": null,
-      "commit_sha": null
+      "commit_sha": "c286691"
     },
     "codex-101-slice": {
       "id": "codex-101-slice",
@@ -27,15 +27,15 @@
       "description": "Create a bilingual (Korean and English) developer tutorial covering Codex setup, authentication, approval modes, slash commands, AGENTS.md, config, MCP, automation patterns, and workflow guidance.",
       "feature_dir": "specs/013-codex-101-slice",
       "branch": "013-codex-101-slice",
-      "state": "pending",
-      "pipeline_stage": "specify",
+      "state": "completed",
+      "pipeline_stage": "review",
       "depends_on": ["codex-overview-slice"],
       "conflicts_with": [],
       "is_safety_sensitive": true,
-      "pr_url": null,
-      "pr_base_branch": null,
+      "pr_url": "https://github.com/KamiJeong/kami-tech-wiki/pull/14",
+      "pr_base_branch": "012-codex-overview-slice",
       "test_results_path": null,
-      "commit_sha": null
+      "commit_sha": "2c0617e"
     }
   },
   "batches": [

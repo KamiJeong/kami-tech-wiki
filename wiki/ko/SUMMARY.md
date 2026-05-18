@@ -28,6 +28,7 @@
 
 * [Codex 개요](codex/README.md)
 * [Codex 소개](codex/index.md)
+* [Codex 101](codex/101.md)
 
 ## Codex CLI
 

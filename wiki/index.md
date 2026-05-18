@@ -28,6 +28,7 @@
 ### Codex
 
 - [[Codex 소개]] — OpenAI의 AI 소프트웨어 엔지니어링 도구. 클라우드 에이전트와 CLI 두 가지 형태로 자연어 기반 코드 생성·수정·실행 지원 (updated: 2026-05-18, sources: 1)
+- [[Codex 101]] — 설정·인증·승인 모드·슬래시 명령·AGENTS.md·MCP·자동화 패턴까지 단계별 실전 가이드 (updated: 2026-05-18, sources: 1)
 
 ### Codex CLI
 
@@ -67,6 +68,7 @@
 ### Codex
 
 - [[What is Codex]] — OpenAI's AI software engineering tool. Available as a cloud agent and CLI; generates, modifies, and executes code from natural language instructions (updated: 2026-05-18, sources: 1)
+- [[Codex 101]] — Step-by-step practical guide: setup, authentication, approval modes, slash commands, AGENTS.md, MCP, and automation patterns (updated: 2026-05-18, sources: 1)
 
 ### Codex CLI
 
