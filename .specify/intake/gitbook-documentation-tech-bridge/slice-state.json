@@ -1,0 +1,115 @@
+{
+  "slug": "gitbook-documentation-tech-bridge",
+  "description": "Create the initial GitBook documentation structure for Tech Bridge Book. The documentation should teach AI and practical technology to non-developers from beginner level to real-world work application. Create a multilingual structure for Korean, English, and Japanese. Include: landing page, introduction page, curriculum overview, learner guide, glossary, lesson template, exercise template, thinking question template, AI safety and privacy guide, chapter structure from beginner to practical work usage. Do not write full lesson content yet. First create the information architecture, folder structure, and template files only.",
+  "strategy": "foundation-first-then-parallel",
+  "created_at": "2026-05-18T00:00:00Z",
+  "updated_at": "2026-05-18T00:00:00Z",
+  "slices": {
+    "ia-scaffold": {
+      "id": "ia-scaffold",
+      "name": "Information Architecture & Folder Scaffold",
+      "description": "Create the top-level GitBook folder structure for multilingual (ko/en/ja) Tech Bridge Book, including book.json or .gitbook.yaml config, SUMMARY.md skeleton, and root README.",
+      "feature_dir": "specs/014-ia-scaffold",
+      "branch": "014-ia-scaffold",
+      "state": "running",
+      "pipeline_stage": "implement",
+      "depends_on": [],
+      "conflicts_with": [],
+      "is_safety_sensitive": false,
+      "pr_url": null,
+      "pr_base_branch": null,
+      "test_results_path": null,
+      "commit_sha": null
+    },
+    "core-pages": {
+      "id": "core-pages",
+      "name": "Core Documentation Pages",
+      "description": "Create the landing page, introduction page, curriculum overview, and learner guide in all three languages (ko/en/ja).",
+      "feature_dir": "specs/015-core-pages",
+      "branch": "015-core-pages",
+      "state": "pending",
+      "pipeline_stage": "plan-complete",
+      "depends_on": ["ia-scaffold"],
+      "conflicts_with": [],
+      "is_safety_sensitive": false,
+      "pr_url": null,
+      "pr_base_branch": null,
+      "test_results_path": null,
+      "commit_sha": null
+    },
+    "template-files": {
+      "id": "template-files",
+      "name": "Lesson, Exercise & Thinking Question Templates",
+      "description": "Create reusable template files for lessons, exercises, and thinking questions that authors will copy when writing new content.",
+      "feature_dir": "specs/016-template-files",
+      "branch": "016-template-files",
+      "state": "pending",
+      "pipeline_stage": "plan-complete",
+      "depends_on": ["ia-scaffold"],
+      "conflicts_with": [],
+      "is_safety_sensitive": false,
+      "pr_url": null,
+      "pr_base_branch": null,
+      "test_results_path": null,
+      "commit_sha": null
+    },
+    "safety-privacy-guide": {
+      "id": "safety-privacy-guide",
+      "name": "AI Safety and Privacy Guide",
+      "description": "Create the standalone AI safety and privacy guide page covering responsible AI usage guidelines for non-developer learners.",
+      "feature_dir": "specs/017-safety-privacy-guide",
+      "branch": "017-safety-privacy-guide",
+      "state": "pending",
+      "pipeline_stage": "plan-complete",
+      "depends_on": ["ia-scaffold"],
+      "conflicts_with": [],
+      "is_safety_sensitive": false,
+      "pr_url": null,
+      "pr_base_branch": null,
+      "test_results_path": null,
+      "commit_sha": null
+    },
+    "chapter-structure": {
+      "id": "chapter-structure",
+      "name": "Chapter Structure Stubs",
+      "description": "Create stub chapter directories and index files from beginner level through practical work usage, with glossary pages, for all three languages.",
+      "feature_dir": "specs/018-chapter-structure",
+      "branch": "018-chapter-structure",
+      "state": "pending",
+      "pipeline_stage": "plan-complete",
+      "depends_on": ["ia-scaffold"],
+      "conflicts_with": [],
+      "is_safety_sensitive": false,
+      "pr_url": null,
+      "pr_base_branch": null,
+      "test_results_path": null,
+      "commit_sha": null
+    }
+  },
+  "batches": [
+    {
+      "batch_number": 1,
+      "slice_ids": ["ia-scaffold"],
+      "is_parallel": false
+    },
+    {
+      "batch_number": 2,
+      "slice_ids": ["core-pages", "template-files", "safety-privacy-guide"],
+      "is_parallel": true
+    },
+    {
+      "batch_number": 3,
+      "slice_ids": ["chapter-structure"],
+      "is_parallel": false
+    }
+  ],
+  "dirty_files_baseline": [
+    ".agent/",
+    ".specify/intake/gitbook-documentation-tech-bridge/",
+    ".specify/intake/make-wiki-what/conflict-matrix.md",
+    ".specify/intake/make-wiki-what/execution-plan.md",
+    ".specify/intake/make-wiki-what/slice-dependency-graph.md",
+    "commands/",
+    "specs/010-speckit-multi-slice-pr/"
+  ]
+}
