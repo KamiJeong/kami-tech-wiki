@@ -23,3 +23,18 @@
 
 * [Codex CLI 概要](codex-cli/README.md)
 * [Codex CLI](codex-cli/index.md)
+
+## SDD (Spec-Driven Development)
+
+* [SDD 概要](sdd/README.md)
+* [Spec-Driven Development](sdd/index.md)
+
+## Kiro
+
+* [Kiro 概要](kiro/README.md)
+* [Kiro](kiro/index.md)
+
+## Spec-Kit
+
+* [Spec-Kit 概要](spec-kit/README.md)
+* [Spec-Kit](spec-kit/index.md)
