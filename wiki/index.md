@@ -25,6 +25,10 @@
 - [[OpenUI API 레퍼런스 개요]] — 5개 패키지 및 CLI 도구 전체 참조 (updated: 2026-05-15, sources: 0)
 - [[@openuidev/react-ui API]] — FullScreen, Copilot, BottomTray 레이아웃 컴포넌트 API (updated: 2026-05-15, sources: 0)
 
+### Codex
+
+- [[Codex 소개]] — OpenAI의 AI 소프트웨어 엔지니어링 도구. 클라우드 에이전트와 CLI 두 가지 형태로 자연어 기반 코드 생성·수정·실행 지원 (updated: 2026-05-18, sources: 1)
+
 ### Codex CLI
 
 - [[Codex CLI]] — OpenAI의 터미널 기반 AI 코딩 에이전트. 승인 모드·슬래시 명령·이미지 분석 지원 (updated: 2026-05-15, sources: 0)
@@ -60,6 +64,10 @@
 - [[OpenUI API Reference Overview]] — Full reference for 5 packages and CLI tool (updated: 2026-05-15, sources: 0)
 - [[@openuidev/react-ui API]] — FullScreen, Copilot, BottomTray layout component API (updated: 2026-05-15, sources: 0)
 
+### Codex
+
+- [[What is Codex]] — OpenAI's AI software engineering tool. Available as a cloud agent and CLI; generates, modifies, and executes code from natural language instructions (updated: 2026-05-18, sources: 1)
+
 ### Codex CLI
 
 - [[Codex CLI]] — Terminal-based AI coding agent by OpenAI. Supports approval modes, slash commands, and image analysis (updated: 2026-05-15, sources: 0)
@@ -94,6 +102,10 @@
 - [[OpenUI Chat GenUI]] — チャット最適化`openuiChatLibrary`コンポーネント (updated: 2026-05-15, sources: 0)
 - [[OpenUI APIリファレンス概要]] — 5つのパッケージとCLIツールの完全リファレンス (updated: 2026-05-15, sources: 0)
 - [[@openuidev/react-ui API]] — FullScreen、Copilot、BottomTrayレイアウトコンポーネントAPI (updated: 2026-05-15, sources: 0)
+
+### Codex
+
+- [[Codexとは]] — OpenAIのAIソフトウェアエンジニアリングツール。クラウドエージェントとCLIの2形態で自然言語によるコード生成・修正・実行が可能 (updated: 2026-05-18, sources: 1)
 
 ### Codex CLI
 

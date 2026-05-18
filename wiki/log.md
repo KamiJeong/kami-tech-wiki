@@ -33,6 +33,18 @@
 - wiki/ja/codex-cli/index.md — OpenAI Codex CLI 日本語ドキュメント (source_count: 0)
 총 3개 파일 생성. wiki/index.md에 한국어·English·日本語 Codex CLI 섹션 추가 완료.
 
+## [2026-05-18 10:00] ingest | Codex Overview Wiki — What is Codex (ko/en/ja)
+
+인제스트 범위:
+- wiki/ko/codex/README.md — Codex 섹션 개요 (한국어)
+- wiki/ko/codex/index.md — Codex 소개: 클라우드 에이전트 vs CLI, 작동 방식, 빠른 시작 (source_count: 1)
+- wiki/en/codex/README.md — Codex section overview (English)
+- wiki/en/codex/index.md — What is Codex: cloud agent vs CLI, how it works, quick start (source_count: 1)
+- wiki/ja/codex/README.md — Codexセクション概要（日本語）
+- wiki/ja/codex/index.md — Codexとは：クラウドエージェント vs CLI、動作原理、クイックスタート (source_count: 1)
+총 6개 파일 생성. wiki/index.md에 한국어·English·日本語 Codex 섹션 추가. 각 로케일 SUMMARY.md 업데이트 완료.
+Source: https://openai.com/codex
+
 ## [2026-05-18 09:00] ingest | SDD Wiki — Spec-Driven Development, Kiro, and Spec-Kit
 
 인제스트 범위:
