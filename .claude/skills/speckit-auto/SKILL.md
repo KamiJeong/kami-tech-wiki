@@ -41,6 +41,25 @@ Usage: /speckit-auto "<feature description>" --mode plan-only|gated|auto-impleme
 ```
 and stop.
 
+### Step 1.5 — Multi-slice intake check
+
+After parsing `FEATURE_DESCRIPTION` and `MODE`, determine whether the request should be split into multiple feature slices:
+
+1. Invoke: `Agent(description: "Intake analysis", subagent_type: "speckit-scheduler", prompt: "EPIC_DESCRIPTION: $FEATURE_DESCRIPTION. REPO_ROOT: <repo root path>. Run your stage now.")`
+2. Parse `SCHEDULER_RESULT` from the agent response:
+   - Format: `SCHEDULER_RESULT: <slug> | <strategy> | <slice_count> | PASS|STOP_AND_ASK`
+3. Route based on result:
+   - If `STOP_AND_ASK`: print the conflict details from the agent response, ask the user to clarify slice boundaries, and **stop**. Do not proceed until user re-runs with a revised description.
+   - If `strategy = "single-spec"` or `slice_count = 1`: continue to Step 2 (existing single-spec pipeline) unchanged.
+   - If `slice_count > 1` and `strategy ≠ "single-spec"`: invoke the multi-slice orchestrator and **stop** the single-spec pipeline:
+     ```
+     Agent(description: "Multi-slice orchestration", subagent_type: "speckit-integrator",
+           prompt: "EPIC_SLUG: <slug>. EPIC_DIR: .specify/intake/<slug>/. MODE: $MODE. Run your stage now.")
+     ```
+     After the integrator returns, print the epic summary and stop. Do not continue to Steps 2–7.
+
+**Note**: The `before_specify` hook runs per-slice inside the multi-slice path (each slice invokes the existing hook chain independently). Hook execution is NOT duplicated for the single-spec fallback path.
+
 ### Step 2 — Resolve feature directory
 
 1. Run: `bash .specify/scripts/bash/check-prerequisites.sh --json --paths-only`
