@@ -1,162 +1,141 @@
 ---
 
-description: "Task list template for feature implementation"
+description: "Task list template for wiki content creation and publication"
 ---
 
 # Tasks: [FEATURE NAME]
 
 **Input**: Design documents from `/specs/[###-feature-name]/`
 
-**Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
+**Prerequisites**: plan.md (required), spec.md (required for reader scenarios), research.md
 
-**Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
+**Organization**: Tasks follow the wiki editorial workflow — Research → Draft (ko) → Draft (en/ja) →
+Review → QA → Publish. Each phase produces an independently reviewable artifact.
 
-**Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
+## Format: `[ID] [P?] [RS?] Description — output path`
 
-## Format: `[ID] [P?] [Story] Description`
-
-- **[P]**: Can run in parallel (different files, no dependencies)
-- **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
+- **[P]**: Can run in parallel (no shared output file)
+- **[RS]**: Which reader scenario this task satisfies (e.g., RS1, RS2)
 - Include exact file paths in descriptions
 
 ## Path Conventions
 
-- **Single project**: `src/`, `tests/` at repository root
-- **Web app**: `backend/src/`, `frontend/src/`
-- **Mobile**: `api/src/`, `ios/src/` or `android/src/`
-- Paths shown below assume single project - adjust based on plan.md structure
+- Korean article: `wiki/ko/<category>/<article-slug>.md`
+- English article: `wiki/en/<category>/<article-slug>.md`
+- Japanese article: `wiki/ja/<category>/<article-slug>.md`
+- Glossary entries: `wiki/glossary/<term-slug>.md`
+- Source summary: `wiki/ko/<category>/<article-slug>-source.md` (and en/ja equivalents)
 
 <!--
   ============================================================================
   IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
 
   The /speckit-tasks command MUST replace these with actual tasks based on:
-  - User stories from spec.md (with their priorities P1, P2, P3...)
-  - Feature requirements from plan.md
-  - Entities from data-model.md
-  - Endpoints from contracts/
+  - Reader scenarios from spec.md (with their priorities P1, P2, P3...)
+  - Content requirements from plan.md
+  - Research sources from research.md
 
-  Tasks MUST be organized by user story so each story can be:
-  - Implemented independently
-  - Tested independently
-  - Delivered as an MVP increment
+  Tasks MUST be organized by editorial phase so each phase can be:
+  - Completed independently
+  - Reviewed independently
+  - Committed as an MVP increment (e.g., Korean draft before translation)
 
   DO NOT keep these sample tasks in the generated tasks.md file.
   ============================================================================
 -->
 
-## Phase 1: Setup (Shared Infrastructure)
+---
 
-**Purpose**: Project initialization and basic structure
+## Phase 1: Research and Terminology
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+**Purpose**: Gather sources, verify facts, and resolve terminology before any drafting begins.
+
+**⚠️ CRITICAL**: No drafting can begin until this phase is complete and reviewed.
+
+- [ ] T001 Gather and verify primary sources for all factual claims — `specs/[###]/research.md`
+- [ ] T002 [P] Identify and document key claims that require citation (Principle II)
+- [ ] T003 [P] Check glossary for existing terms: `wiki/glossary/`
+- [ ] T004 Add new terms to multilingual glossary (if any) — `wiki/glossary/<term>.md`
+- [ ] T005 Confirm translation decisions for untranslatable terms (Principle IV)
+
+**Checkpoint**: Sources verified, terminology locked — drafting can begin.
 
 ---
 
-## Phase 2: Foundational (Blocking Prerequisites)
+## Phase 2: Korean Draft (Primary Language)
 
-**Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
+**Purpose**: Write the Korean version as the primary editorial draft (Principle IV).
 
-**⚠️ CRITICAL**: No user story work can begin until this phase is complete
+**Reader scenario**: [RS1 — primary learning goal]
 
-Examples of foundational tasks (adjust based on your project):
+- [ ] T010 [RS1] Write article structure outline (13 sections per Principle VIII) — draft notes
+- [ ] T011 [RS1] Draft sections 1–5 (Summary → Plain-language explanation) — `wiki/ko/[category]/[slug].md`
+- [ ] T012 [RS1] Draft sections 6–9 (Key concepts → Common misconceptions) — `wiki/ko/[category]/[slug].md`
+- [ ] T013 [RS1] Draft sections 10–13 (Related terms → Advanced notes) — `wiki/ko/[category]/[slug].md`
+- [ ] T014 [RS1] Add at least one analogy or real-world example (Principle X)
+- [ ] T015 [RS1] Add frontmatter (title, tags, category, language, date_created, date_modified, source_count, status, review_cycle)
+- [ ] T016 Add internal links to prerequisite and related articles (Principle VII)
 
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
-
-**Checkpoint**: Foundation ready - user story implementation can now begin in parallel
-
----
-
-## Phase 3: User Story 1 - [Title] (Priority: P1) 🎯 MVP
-
-**Goal**: [Brief description of what this story delivers]
-
-**Independent Test**: [How to verify this story works on its own]
-
-### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
-
-> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
-
-- [ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
-
-### Implementation for User Story 1
-
-- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)
-- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T016 [US1] Add validation and error handling
-- [ ] T017 [US1] Add logging for user story 1 operations
-
-**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
+**Checkpoint**: Korean draft complete and self-consistent — translation can begin in parallel.
 
 ---
 
-## Phase 4: User Story 2 - [Title] (Priority: P2)
+## Phase 3: English and Japanese Translation
 
-**Goal**: [Brief description of what this story delivers]
+**Purpose**: Produce natural, idiomatic translations from the approved Korean draft (Principle IV).
 
-**Independent Test**: [How to verify this story works on its own]
+- [ ] T020 [P] [RS1] Translate article to English — `wiki/en/[category]/[slug].md`
+- [ ] T021 [P] [RS1] Translate article to Japanese — `wiki/ja/[category]/[slug].md`
+- [ ] T022 [P] Update English frontmatter (language: en, date fields)
+- [ ] T023 [P] Update Japanese frontmatter (language: ja, date fields)
+- [ ] T024 [P] Verify translation naturalness: English idioms and analogies localized
+- [ ] T025 [P] Verify translation naturalness: Japanese idioms and analogies localized
+- [ ] T026 Add translation notes for any term that required localization (Principle IV, XII)
 
-### Tests for User Story 2 (OPTIONAL - only if tests requested) ⚠️
-
-- [ ] T018 [P] [US2] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T019 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py
-
-### Implementation for User Story 2
-
-- [ ] T020 [P] [US2] Create [Entity] model in src/models/[entity].py
-- [ ] T021 [US2] Implement [Service] in src/services/[service].py
-- [ ] T022 [US2] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T023 [US2] Integrate with User Story 1 components (if needed)
-
-**Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
+**Checkpoint**: All three language versions present — quality review can begin.
 
 ---
 
-## Phase 5: User Story 3 - [Title] (Priority: P3)
+## Phase 4: Quality Gate Review
 
-**Goal**: [Brief description of what this story delivers]
+**Purpose**: Verify all 10 quality gates from Constitution Principle XII before publication.
 
-**Independent Test**: [How to verify this story works on its own]
+- [ ] T030 Readability check: non-developer reads article without external help
+- [ ] T031 [P] Factual accuracy check: all major claims verified against sources in research.md
+- [ ] T032 [P] Source integrity check: no copied paragraphs; all synthesis is original
+- [ ] T033 [P] Multilingual consistency check: ko/en/ja convey same meaning and structure
+- [ ] T034 [P] Markdown portability check: renders correctly in GitBook, GitHub, Obsidian
+- [ ] T035 [P] Terminology consistency check: all terms match glossary
+- [ ] T036 [P] Navigation check: all internal links resolve; prerequisites declared
+- [ ] T037 [P] Copying/plagiarism risk check: no paragraph-length reproduction of source
+- [ ] T038 [P] Template compliance check: all 13 sections present or exception documented
+- [ ] T039 [P] Learning goal check: article achieves stated goal without advanced section
 
-### Tests for User Story 3 (OPTIONAL - only if tests requested) ⚠️
-
-- [ ] T024 [P] [US3] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T025 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py
-
-### Implementation for User Story 3
-
-- [ ] T026 [P] [US3] Create [Entity] model in src/models/[entity].py
-- [ ] T027 [US3] Implement [Service] in src/services/[service].py
-- [ ] T028 [US3] Implement [endpoint/feature] in src/[location]/[file].py
-
-**Checkpoint**: All user stories should now be independently functional
+**Checkpoint**: All 10 gates documented as passed — human review requested.
 
 ---
 
-[Add more user story phases as needed, following the same pattern]
+## Phase 5: Human Editorial Review
+
+**Purpose**: Human reviewer reads and approves the article (Constitution Principle XV — NON-NEGOTIABLE).
+
+- [ ] T040 Human reviewer reads Korean version and confirms educational quality
+- [ ] T041 [P] Human reviewer confirms factual claims are credible and well-cited
+- [ ] T042 Apply reviewer corrections to all three language versions
+- [ ] T043 Record review: reviewer name, date, gates confirmed, corrections made
+
+**Checkpoint**: Human approval documented — ready to publish.
 
 ---
 
-## Phase N: Polish & Cross-Cutting Concerns
+## Phase 6: Publication
 
-**Purpose**: Improvements that affect multiple user stories
+**Purpose**: Merge article and update wiki navigation.
 
-- [ ] TXXX [P] Documentation updates in docs/
-- [ ] TXXX Code cleanup and refactoring
-- [ ] TXXX Performance optimization across all stories
-- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
-- [ ] TXXX Security hardening
-- [ ] TXXX Run quickstart.md validation
+- [ ] T050 Update `wiki/index.md` to include new article entry
+- [ ] T051 [P] Update `wiki/log.md` with operation record (format: `## [YYYY-MM-DD HH:MM] ingest | [title]`)
+- [ ] T052 [P] Verify SUMMARY.md updated for GitBook navigation (ko/en/ja)
+- [ ] T053 Send Slack notification per CLAUDE.md instructions
 
 ---
 
@@ -164,89 +143,38 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Phase Dependencies
 
-- **Setup (Phase 1)**: No dependencies - can start immediately
-- **Foundational (Phase 2)**: Depends on Setup completion - BLOCKS all user stories
-- **User Stories (Phase 3+)**: All depend on Foundational phase completion
-  - User stories can then proceed in parallel (if staffed)
-  - Or sequentially in priority order (P1 → P2 → P3)
-- **Polish (Final Phase)**: Depends on all desired user stories being complete
-
-### User Story Dependencies
-
-- **User Story 1 (P1)**: Can start after Foundational (Phase 2) - No dependencies on other stories
-- **User Story 2 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1 but should be independently testable
-- **User Story 3 (P3)**: Can start after Foundational (Phase 2) - May integrate with US1/US2 but should be independently testable
-
-### Within Each User Story
-
-- Tests (if included) MUST be written and FAIL before implementation
-- Models before services
-- Services before endpoints
-- Core implementation before integration
-- Story complete before moving to next priority
+- **Phase 1 (Research)**: No dependencies — start immediately. BLOCKS all drafting.
+- **Phase 2 (Korean Draft)**: Depends on Phase 1 completion.
+- **Phase 3 (Translations)**: Depends on Phase 2 completion. en and ja MUST run in parallel.
+- **Phase 4 (QA)**: Depends on Phase 3 completion. All gate checks MUST run in parallel.
+- **Phase 5 (Human Review)**: Depends on Phase 4 — ALL gates must pass first.
+- **Phase 6 (Publication)**: Depends on Phase 5 — human approval required.
 
 ### Parallel Opportunities
 
-- All Setup tasks marked [P] can run in parallel
-- All Foundational tasks marked [P] can run in parallel (within Phase 2)
-- Once Foundational phase completes, all user stories can start in parallel (if team capacity allows)
-- All tests for a user story marked [P] can run in parallel
-- Models within a story marked [P] can run in parallel
-- Different user stories can be worked on in parallel by different team members
+- All Phase 1 source-gathering tasks marked [P] can run in parallel.
+- Phase 3 English and Japanese translation can run fully in parallel.
+- All Phase 4 quality gate checks marked [P] can run in parallel.
+- Phase 6 index/log updates marked [P] can run in parallel.
 
 ---
 
-## Parallel Example: User Story 1
+## Definition of Done
 
-```bash
-# Launch all tests for User Story 1 together (if tests requested):
-Task: "Contract test for [endpoint] in tests/contract/test_[name].py"
-Task: "Integration test for [user journey] in tests/integration/test_[name].py"
-
-# Launch all models for User Story 1 together:
-Task: "Create [Entity1] model in src/models/[entity1].py"
-Task: "Create [Entity2] model in src/models/[entity2].py"
-```
-
----
-
-## Implementation Strategy
-
-### MVP First (User Story 1 Only)
-
-1. Complete Phase 1: Setup
-2. Complete Phase 2: Foundational (CRITICAL - blocks all stories)
-3. Complete Phase 3: User Story 1
-4. **STOP and VALIDATE**: Test User Story 1 independently
-5. Deploy/demo if ready
-
-### Incremental Delivery
-
-1. Complete Setup + Foundational → Foundation ready
-2. Add User Story 1 → Test independently → Deploy/Demo (MVP!)
-3. Add User Story 2 → Test independently → Deploy/Demo
-4. Add User Story 3 → Test independently → Deploy/Demo
-5. Each story adds value without breaking previous stories
-
-### Parallel Team Strategy
-
-With multiple developers:
-
-1. Team completes Setup + Foundational together
-2. Once Foundational is done:
-   - Developer A: User Story 1
-   - Developer B: User Story 2
-   - Developer C: User Story 3
-3. Stories complete and integrate independently
+A task is complete when:
+1. It maps to a reader scenario or a required quality gate.
+2. The output file exists at the specified path with correct frontmatter.
+3. Internal links are verified as resolving.
+4. For translation tasks: naturalness has been reviewed, not just literal accuracy.
+5. For review tasks: the gate result is documented (pass/fail/correction needed).
+6. A human has reviewed and approved Phase 5 tasks before the article is marked done.
 
 ---
 
 ## Notes
 
-- [P] tasks = different files, no dependencies
-- [Story] label maps task to specific user story for traceability
-- Each user story should be independently completable and testable
-- Verify tests fail before implementing
-- Commit after each task or logical group
-- Stop at any checkpoint to validate story independently
-- Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence
+- [P] tasks = independent output paths, no shared file dependency
+- [RS] label maps task to the reader scenario it satisfies
+- Always commit after each phase checkpoint, not after individual tasks
+- Never mark an article `[X]` complete until Phase 5 (human review) is finished
+- Avoid: drafting before research is verified; translating before the Korean draft is stable

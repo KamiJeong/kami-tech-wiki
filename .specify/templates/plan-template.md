@@ -40,7 +40,22 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify alignment with the constitution at `.specify/memory/constitution.md` (v2.0.0).
+
+| Principle | Gate question | Pass? |
+|-----------|---------------|-------|
+| I. Audience-First | Is the target reader (non-developer) clearly defined in the spec? | |
+| II. Accuracy | Are research sources identified and reliable? | |
+| IV. Multilingual Parity | Are all three languages (ko/en/ja) in scope and tasked? | |
+| V. Portable Markdown | Does the plan avoid platform-specific Markdown features? | |
+| VI. Progressive Depth | Does the article structure include all required depth layers? | |
+| VII. IA & Navigation | Are prerequisites and related articles identified? | |
+| VIII. Article Template | Is the standard 13-section structure applied or exception documented? | |
+| IX. Terminology | Are new terms identified and a glossary-update task included? | |
+| XII. Quality Gates | Are all 10 quality gate review tasks included in tasks.md? | |
+| XIII. Maintenance | Is `review_cycle` declared (stable / periodic / fast-changing)? | |
+| XIV. Separation | Does the plan contain no article prose? | |
+| XV. Human Review | Is a human review task included before merge to main? | |
 
 ## Project Structure
 

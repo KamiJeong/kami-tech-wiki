@@ -1,343 +1,424 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: (uninitialized template) → 1.0.0
-Bump rationale: Initial ratification. All placeholders replaced with concrete principles
-                for AI-assisted spec-driven development. MAJOR baseline established.
+Version change: 1.0.0 → 2.0.0
+Bump rationale: MAJOR — all 16 software-engineering principles replaced with 15 content and
+                editorial governance principles for a Multilingual AI Knowledge Wiki.
+                Domain change (code product → knowledge publication) requires a full rewrite.
 
-Modified principles: N/A (initial adoption)
+Modified principles (old → new):
+  I.   Spec Before Code              → Audience-First Explanation
+  II.  Single Source of Truth        → Accuracy and Source Integrity
+  III. Explicit Overrides Only       → Original Synthesis, Not Copying
+  IV.  Version-Pinned Stack          → Multilingual Parity
+  V.   Type Safety                   → Portable Markdown First
+  VI.  Code Quality                  → Progressive Depth
+  VII. Testing Standards             → Information Architecture and Navigation
+  VIII.UX Consistency                → Consistent Article Template
+  IX.  Design System & Storybook     → Terminology Governance
+  X.   Accessibility                 → Reader Engagement
+  XI.  Performance Budgets           → Depth Without Overload
+  XII. Security and Privacy          → Review and Quality Gates
+  XIII.Clear Module Boundaries       → Versioning and Maintenance
+  XIV. Local-First & Cost-Aware Dev  → Separation of Concerns
+  XV.  AI Agent Governance           → Human Editorial Judgment
+  XVI. Definition of Done            → (merged into Principle XII and Editorial Workflow)
 
-Added sections:
-  - Core Principles (16 principles, expanded from 5-slot template per user request)
-  - Engineering Constraints (replaces SECTION_2_NAME)
-  - Development Workflow & Quality Gates (replaces SECTION_3_NAME)
-  - Governance
-
-Removed sections: None
+Removed sections:
+  - Engineering Constraints (replaced by Content Constraints)
+  - Development Workflow & Quality Gates (replaced by Editorial Workflow & Quality Gates)
 
 Templates requiring updates:
   - ✅ .specify/memory/constitution.md (this file)
-  - ⚠ .specify/templates/plan-template.md — verify Constitution Check section references
-    the 16 principles below; update if it still cites placeholder principle names
-  - ⚠ .specify/templates/spec-template.md — verify mandatory scope/requirements sections
-    align with Principles I, II, III, XV
-  - ⚠ .specify/templates/tasks-template.md — verify task categorization covers principles
-    VI (type safety), VII (testing), IX (Storybook), X (a11y), XI (perf), XII (security)
-  - ⚠ .claude/skills/speckit-*/ — verify command guidance does not contradict principles
+  - ✅ .specify/templates/plan-template.md — Constitution Check updated to wiki gates
+  - ✅ .specify/templates/spec-template.md — Sections updated for content specifications
+  - ✅ .specify/templates/tasks-template.md — Phases updated for wiki content workflow
+  - ⚠ .claude/skills/speckit-*/ — verify command guidance does not contradict new principles
 
 Deferred items: None.
 
 Follow-up TODOs: None.
 -->
 
-# Analyze Site Design Constitution
+# Multilingual AI Knowledge Wiki — Project Constitution
 
-This constitution defines the non-negotiable principles, constraints, and governance
-rules that bind every contributor — human and AI — working in this repository. It is
-the single source of authority for `/speckit.specify`, `/speckit.clarify`,
-`/speckit.plan`, `/speckit.tasks`, `/speckit.implement`, `/speckit.analyze`, and the
-extension-based quality gates (DocGuard, Version Guard, Verify, Token Analyzer).
+This constitution defines the non-negotiable principles, constraints, and governance rules
+that bind every contributor — human and AI — working in this repository. It is the single
+source of authority for all Spec Kit commands (`/speckit-specify`, `/speckit-plan`,
+`/speckit-tasks`, `/speckit-implement`, `/speckit-analyze`) and all editorial workflows
+(content drafting, translation, review, and publication).
 
 ## Core Principles
 
-### I. Spec Before Code (NON-NEGOTIABLE)
-Every feature MUST originate from an approved `spec.md` produced via `/speckit.specify`
-and refined through `/speckit.clarify` before any production code is written. Plans,
-tasks, and implementation MUST trace back to numbered spec requirements. Exploratory
-spikes MAY exist on throwaway branches but MUST NOT be merged without a retroactive
-spec.
+### I. Audience-First Explanation (NON-NEGOTIABLE)
 
-- **Rationale**: AI agents amplify whatever ambiguity exists upstream; written specs
-  bound the agent's interpretive freedom and create a reviewable artifact.
-- **Enforcement**: `/speckit.plan` MUST refuse to run without a spec; `/speckit.analyze`
-  MUST flag plan/task items that do not map to a spec requirement ID.
-- **Example violation**: Opening a PR that adds a new API endpoint with no
-  corresponding `spec.md` requirement, or implementing functionality that "extends"
-  the spec without re-running clarification.
+All content MUST be understandable to non-developers. Technical terms MUST be explained
+with plain-language definitions, analogies, real-world examples, and practical context.
+Developer-level detail MAY be included in optional advanced sections only after the
+beginner-friendly explanation is fully established.
 
-### II. Single Source of Truth
-Each fact (requirement, type, constant, schema, API contract, design token) MUST have
-exactly one authoritative definition. Other artifacts MUST reference or generate from
-it; duplication is forbidden. When a fact appears in multiple places, a generator
-SHOULD produce the derivatives.
+- **Rationale**: The wiki's value is in making difficult AI concepts accessible to people
+  who lack a technical background. Content that requires prior expertise fails its primary
+  mission before the reader finishes the first paragraph.
+- **Enforcement**: Every article MUST pass a "non-developer readability check" (Principle XII)
+  before being marked complete. `/speckit-analyze` MUST flag spec requirements or tasks that
+  omit the target reader definition.
+- **Example violation**: An article on "Transformer architecture" that opens with attention
+  matrices and softmax notation without first explaining what the model is trying to do and
+  why it matters to a non-technical reader.
 
-- **Rationale**: Drift between duplicated definitions is the dominant source of
-  AI-introduced bugs and stale documentation.
-- **Enforcement**: DocGuard MUST flag duplicated definitions; reviewers MUST reject
-  copy-pasted constants, hand-maintained type mirrors, or parallel schemas.
-- **Example violation**: Defining an enum in TypeScript and re-declaring the same
-  string literals in a JSON config; copy-pasting an OpenAPI schema into the client.
+### II. Accuracy and Source Integrity (NON-NEGOTIABLE)
 
-### III. Explicit Overrides Only
-Any deviation from this constitution, the spec, the plan, or `version-guard`
-constraints MUST be documented inline (code comment, plan section, or spec note)
-with: (a) the rule overridden, (b) the reason, (c) the approver, (d) the expiry or
-review date. Silent overrides are forbidden.
+All factual claims about AI concepts, tools, models, research, laws, industry practices,
+or recent developments MUST be verified against reliable sources. The wiki MUST explicitly
+distinguish between: established facts, common interpretations, expert opinions, assumptions,
+and emerging or contested trends. Unsupported hype, vague superlatives, and unverifiable
+claims are forbidden.
 
-- **Rationale**: Undocumented exceptions metastasize; an explicit override is
-  reviewable, searchable, and revocable.
-- **Enforcement**: `/speckit.analyze` and DocGuard MUST scan for override markers and
-  reject undocumented deviations.
-- **Example violation**: Disabling a lint rule with `// eslint-disable` and no reason;
-  hardcoding a value that contradicts the spec without an `OVERRIDE:` note.
+- **Rationale**: Readers trust the wiki as an educational reference. A single inaccurate
+  claim erodes that trust for all readers who catch it — and misleads those who do not.
+- **Enforcement**: Every article MUST cite at least one verifiable source per major claim.
+  `/speckit-analyze` MUST flag spec requirements referencing unverified industry data.
+  Review quality gate MUST include a factual accuracy check (Principle XII).
+- **Example violation**: "GPT-4 is the most capable AI model ever created" with no citation
+  or date; asserting a regulatory law is in effect without citing the law and its status.
 
-### IV. Version-Pinned Stack
-All runtime, language, framework, library, and tool versions MUST be pinned to exact
-versions (no `^`, `~`, `latest`, or floating tags) and recorded in lockfiles and
-`version-guard` constraints. Upgrades MUST be deliberate, single-purpose PRs.
+### III. Original Synthesis, Not Copying
 
-- **Rationale**: AI agents trained on mixed-version corpora will emit
-  version-incompatible code unless constrained; reproducibility demands pinning.
-- **Enforcement**: `speckit.version-guard.check` MUST run before `/speckit.plan`;
-  `speckit.version-guard.validate` MUST run after `/speckit.implement` and reject
-  API patterns incompatible with the pinned version.
-- **Example violation**: `"react": "^18.0.0"` in `package.json`; using a Python API
-  removed in the pinned interpreter version; mixing Node 18 and Node 20 features.
+The wiki MUST NOT reproduce source material by copying large sections of text, even with
+attribution. Every article MUST synthesize information from multiple sources where appropriate,
+rewrite explanations in original wording, and add educational value through structure,
+examples, comparisons, diagrams, glossaries, or step-by-step breakdowns.
 
-### V. Type Safety
-All production code MUST be statically typed end-to-end with no implicit `any`,
-unchecked casts, or untyped boundaries. External inputs (HTTP, env vars, files,
-LLM outputs) MUST be parsed and validated at the boundary with a schema (e.g.,
-Zod, Pydantic). Generated types MUST come from the single source of truth (II).
+- **Rationale**: Copying is both a legal risk (copyright) and an editorial failure —
+  it adds no value over linking to the original source, and it removes the wiki's
+  opportunity to teach rather than merely repeat.
+- **Enforcement**: Review MUST include a copying/plagiarism risk check (Principle XII).
+  AI-generated drafts MUST be reviewed and rewritten for originality, not accepted verbatim.
+- **Example violation**: Pasting three paragraphs from an academic paper with only a
+  citation added; reproducing a product's marketing copy as a factual description.
 
-- **Rationale**: Types are the cheapest, fastest feedback loop for AI-generated code.
-- **Enforcement**: Strict compiler/linter settings MUST be enabled and CI MUST fail
-  on type errors. `// @ts-ignore`, `as any`, or equivalent suppressions require an
-  explicit override (III).
-- **Example violation**: `function handler(req: any)` at an HTTP boundary; parsing
-  JSON without schema validation; casting an `unknown` LLM response to a typed
-  interface without runtime checks.
+### IV. Multilingual Parity
 
-### VI. Code Quality
-Code MUST be small, readable, and conventional: functions SHOULD fit on one screen,
-modules SHOULD have a single responsibility, names MUST describe intent, and dead
-code MUST be removed (unless explicitly retained per III). Formatters and linters
-MUST run in CI and pre-commit hooks.
+Every major article MUST be produced in Korean (`wiki/ko/`), English (`wiki/en/`), and
+Japanese (`wiki/ja/`). The three language versions MUST preserve: the same meaning, heading
+structure, examples, learning goals, and terminology intent. Translation MUST be natural
+and idiomatic — never word-for-word literal. When a concept does not translate cleanly,
+the article MUST include localized wording with a short explanation of the translation choice.
 
-- **Rationale**: Reviewers — and future AI agents — read code far more often than
-  they write it; complexity tax compounds.
-- **Enforcement**: `/speckit.implement` MUST produce code that passes formatters,
-  linters, and complexity thresholds. Reviewers MUST reject unjustified complexity.
-- **Example violation**: A 400-line function; commented-out blocks left "for later";
-  introducing an abstraction layer for a single caller.
+- **Rationale**: Releasing incomplete language versions creates an unequal reader experience
+  and undermines the wiki's stated multilingual mission from day one.
+- **Enforcement**: A feature spec MUST list all three languages in scope. Tasks MUST include
+  translation and multilingual consistency review tasks. An article is NOT complete until all
+  three language versions pass the multilingual consistency check (Principle XII).
+- **Example violation**: Publishing the Korean version of a new article while leaving the
+  English and Japanese versions as stubs for "later"; translating idioms word-for-word
+  without checking whether the result is natural in the target language.
 
-### VII. Testing Standards
-Every spec requirement MUST be covered by at least one automated test. The testing
-pyramid MUST be respected: unit tests for logic, integration tests for boundaries,
-end-to-end tests for critical user journeys. Mocks MUST NOT replace integration
-tests at trust boundaries (DB, external APIs the spec depends on). Tests MUST be
-deterministic; flaky tests MUST be quarantined or fixed within one sprint.
+### V. Portable Markdown First
 
-- **Rationale**: Without enforceable tests, AI-generated changes silently break
-  invariants the human reviewer cannot hold in working memory.
-- **Enforcement**: `speckit.verify.run` MUST run after `/speckit.implement` and
-  refuse to certify completion if requirements lack tests; `speckit.verify-tasks.run`
-  MUST detect phantom completions.
-- **Example violation**: A task marked `[X]` with no corresponding test; mocking the
-  database in a migration test; an E2E suite skipped in CI.
+All wiki content MUST be written in clean, portable Markdown compatible with GitBook,
+Obsidian, Confluence, GitHub Markdown, and common static documentation tools. Platform-
+specific syntax (e.g., GitBook `{% hint %}` blocks, Obsidian `[[wikilinks]]`) MUST NOT
+appear in the canonical article body. Callout/admonition patterns MUST degrade gracefully
+to readable plain Markdown on platforms that do not support them. Internal links MUST be
+relative paths. Image references MUST use simple, stable `![alt](path)` syntax.
 
-### VIII. UX Consistency
-User-facing behavior — copy tone, spacing, motion, error messaging, empty states,
-loading patterns, keyboard interactions — MUST be consistent across the product and
-MUST come from the design system (IX). Ad-hoc UI variations require an explicit
-override (III) with design approval.
+- **Rationale**: The wiki must survive platform migrations. Locking content to a single
+  platform's syntax creates expensive rewrites whenever the hosting environment changes.
+- **Enforcement**: `/speckit-analyze` MUST flag any spec or task requiring platform-specific
+  Markdown features in the canonical content layer. The Markdown portability check
+  (Principle XII) MUST run before an article is marked complete.
+- **Example violation**: Using GitBook's `{% tabs %}` block inside a core article; using
+  Obsidian's `[[Page Title]]` link syntax in a file intended for GitHub rendering.
 
-- **Rationale**: Inconsistency erodes trust faster than missing features.
-- **Enforcement**: Storybook visual review and design-system lint rules MUST run on
-  every UI PR; `/speckit.analyze` MUST flag UI requirements not bound to design
-  tokens.
-- **Example violation**: A new modal that uses raw CSS instead of the system's
-  `<Dialog>`; bespoke error text instead of the standard error component.
+### VI. Progressive Depth
 
-### IX. Design System and Storybook Governance
-All shared UI primitives MUST live in the design system package, MUST have a
-Storybook story covering default, loading, error, empty, and a11y states, and MUST
-expose typed props (V). Application code MUST NOT redefine primitives that exist in
-the system. Design tokens (color, spacing, typography, motion) are the single source
-of truth (II) for styling.
+Each article MUST support layered learning. At minimum, every article MUST contain:
+a short summary for first-time readers, a beginner-friendly explanation, a deeper
+conceptual section, at least one example or analogy, common misunderstandings, practical
+use cases, and related terms with links. Optional advanced notes for technical readers
+MAY appear in a clearly separated final section.
 
-- **Rationale**: Storybook is the executable contract between design and engineering;
-  without it, AI agents reinvent components and drift accumulates.
-- **Enforcement**: CI MUST run Storybook build, visual regression, and a11y addon
-  checks. Reviewers MUST reject new primitives in app code.
-- **Example violation**: A `<CustomButton>` defined inside a feature folder; a new
-  primitive merged without stories; hardcoded `#FF0000` instead of a token.
+- **Rationale**: Readers arrive at an article with wildly different background knowledge.
+  A flat structure written for one level excludes everyone else. Layered content lets the
+  same article serve a curious newcomer and an informed practitioner.
+- **Enforcement**: The article template (Principle VIII) encodes these layers as mandatory
+  sections. `/speckit-tasks` MUST include tasks for each layer. An article that skips
+  required layers fails the quality gate (Principle XII).
+- **Example violation**: An article with only a dense technical explanation and no plain-
+  language summary; an article that lists use cases without first explaining the concept.
 
-### X. Accessibility
-All user-facing UI MUST meet WCAG 2.2 Level AA: semantic HTML, keyboard operability,
-visible focus, sufficient contrast, proper labels, and respect for `prefers-reduced-
-motion`. Automated a11y checks (axe, Storybook a11y addon) MUST run in CI; manual
-keyboard and screen-reader review SHOULD run for new flows.
+### VII. Information Architecture and Navigation
 
-- **Rationale**: Accessibility is a legal, ethical, and product-quality baseline; it
-  is cheapest to enforce at component creation.
-- **Enforcement**: a11y checks MUST be a blocking CI step; Storybook stories MUST
-  pass the a11y addon; `/speckit.analyze` MUST flag UI requirements missing a11y
-  acceptance criteria.
-- **Example violation**: A `<div onClick>` instead of `<button>`; an icon-only button
-  with no `aria-label`; modal traps that ignore Escape.
+The wiki MUST be organized as a connected knowledge system, not a flat collection of
+isolated articles. Every article MUST declare: title, one-sentence purpose, intended audience
+level, prerequisites, related articles (with links), glossary terms defined in this article,
+and recommended next reads. Large topics MUST be split into multiple linked articles rather
+than a single long-form mega-document. The top-level information architecture (categories,
+sections, navigation) MUST be specified before individual article specs are written.
 
-### XI. Performance Budgets
-Each user-facing surface MUST declare a performance budget (e.g., LCP, TTI,
-bundle size, API p95 latency, query cost) in `plan.md`. Budgets MUST be measured in
-CI on representative data and MUST fail the build when exceeded. Optimizations
-beyond the budget are out of scope.
+- **Rationale**: Readers navigate by curiosity and by need. Disconnected articles leave
+  readers stranded; oversized articles bury the concepts readers are looking for.
+- **Enforcement**: Every article spec MUST include a navigation section. `/speckit-analyze`
+  MUST flag articles without prerequisite or related-article declarations. The navigation
+  check (Principle XII) MUST verify that all declared links resolve.
+- **Example violation**: An article on "Fine-tuning" with no link to the "Training" article;
+  a single 8,000-word mega-article on "Large Language Models" that should be six linked pages.
 
-- **Rationale**: Budgets convert "fast" from opinion to measurement; without them,
-  AI-generated bloat (heavy deps, N+1 queries) ships unnoticed.
-- **Enforcement**: `/speckit.plan` MUST require a Performance section with numeric
-  budgets; CI MUST run Lighthouse / load tests / bundle analyzers as appropriate.
-- **Example violation**: Adding moment.js for one format call; a list view that
-  fires N queries per row; an unbudgeted 600 KB image hero.
+### VIII. Consistent Article Template
 
-### XII. Security and Privacy by Default
-Secrets MUST NEVER be committed; they MUST be loaded from environment or a secret
-manager. All external input MUST be validated (V). Output to logs, telemetry, or
-LLM prompts MUST be free of PII, credentials, financial raw data, and unreleased
-product information. Authentication, authorization, and audit logging MUST be
-designed in the spec, not retrofitted.
+Every conceptual article MUST follow the standard structure listed below unless a documented
+exception (with reason) is recorded in the spec. Deviation requires an explicit override
+note citing which sections are omitted and why.
 
-- **Rationale**: Privacy and security mistakes are expensive and often irreversible;
-  AI agents will happily echo secrets if not constrained.
-- **Enforcement**: Secret-scanning MUST run in CI; PII masking MUST be enforced at
-  log boundaries; `/speckit.specify` MUST include a Security & Privacy section for
-  any feature touching user data.
-- **Example violation**: A `.env` file committed to git; logging a full request body
-  containing tokens; sending raw customer records to an external LLM.
+**Standard structure** (in order):
+1. Title
+2. One-sentence summary
+3. Who this page is for
+4. Why this matters
+5. Plain-language explanation
+6. Key concepts
+7. Example or analogy
+8. Practical applications
+9. Common misconceptions
+10. Related terms (linked)
+11. Further reading (cited sources)
+12. Language notes (when a term does not translate cleanly)
+13. Advanced notes (optional, clearly marked)
 
-### XIII. Clear Module Boundaries
-Modules MUST have explicit public APIs (an `index` file or equivalent); internals
-MUST NOT be imported across module boundaries. Cross-module dependencies MUST flow
-in one direction (no cycles). Shared types live in dedicated packages, not in
-ad-hoc shared folders.
+- **Rationale**: Consistent structure reduces the cognitive load of navigating between articles
+  and makes the wiki feel like a coherent publication rather than a patchwork of styles.
+- **Enforcement**: Article tasks MUST map to the sections above. The review quality gate
+  (Principle XII) MUST verify structural compliance before marking an article complete.
+- **Example violation**: An article that jumps directly to "Key concepts" with no summary or
+  audience definition; an article missing "Common misconceptions" without a documented reason.
 
-- **Rationale**: Boundaries are the only durable defense against entropy in a
-  multi-agent, multi-contributor codebase.
-- **Enforcement**: Dependency-cruiser / eslint-boundaries (or language-equivalent)
-  MUST run in CI; reviewers MUST reject reach-through imports.
-- **Example violation**: `import { x } from "../../feature-a/internal/util"`; a
-  circular dependency between `auth` and `user`; a god-module `shared/utils`.
+### IX. Terminology Governance
 
-### XIV. Local-First and Cost-Aware Development
-The full development loop — build, lint, type-check, unit + integration tests,
-Storybook — MUST run on a developer laptop without paid cloud services. AI agent
-runs, LLM calls, and cloud builds MUST be measurable; the project SHOULD track
-token consumption per Spec Kit phase via `speckit.token-analyzer.baseline` and
-investigate regressions.
+AI terminology MUST be managed consistently across Korean, English, and Japanese. This
+project MUST maintain a multilingual glossary (`wiki/glossary/`) containing: preferred terms,
+alternative terms, abbreviations, definitions, usage notes, and cross-language equivalents.
+New articles MUST reuse glossary terms and add new terms to the glossary before publishing.
+Inventing inconsistent wording for an already-defined concept is forbidden.
 
-- **Rationale**: Tight local feedback loops are the cheapest accelerator; cost blind
-  spots compound when AI is in the loop.
-- **Enforcement**: A documented `make dev` / `npm run dev` (or equivalent) MUST
-  bring up everything locally; token-analyzer reports SHOULD be reviewed at each
-  Spec Kit phase boundary.
-- **Example violation**: A test suite that requires a cloud database to run; a
-  feature whose only validation path is a deployed environment; unbounded LLM
-  retries with no token telemetry.
+- **Rationale**: AI terminology is already unstable in English; inconsistent translation
+  across three languages compounds the confusion. A governed glossary ensures readers
+  build a coherent mental model across all articles.
+- **Enforcement**: Article tasks MUST include a "terminology check against glossary" step.
+  `/speckit-analyze` MUST flag specs that introduce terms not yet in the glossary without
+  a corresponding glossary-update task.
+- **Example violation**: Using "언어 모델", "대규모 언어 모델", and "LLM" interchangeably in
+  the same article without defining which is preferred; defining "hallucination" differently
+  in the Korean and English versions of the same concept.
 
-### XV. AI Agent Governance
-AI agents (Claude Code, Cursor, Copilot, etc.) MUST operate within this
-constitution. Agents MUST: (a) consult `spec.md`, `plan.md`, `tasks.md`, and this
-constitution before writing code; (b) respect version-guard constraints; (c) refuse
-to invent requirements; (d) flag ambiguity rather than guess; (e) leave an audit
-trail (commit messages, task updates). Agent-generated code MUST be reviewed by a
-human before merge; agents MUST NOT self-approve PRs.
+### X. Reader Engagement
 
-- **Rationale**: Agents are powerful but unaccountable without explicit rules;
-  governance turns them from liability into leverage.
-- **Enforcement**: `/speckit.implement` MUST honor version-guard and DocGuard
-  outputs; CODEOWNERS MUST require human approval; `/speckit.analyze` MUST flag
-  agent-introduced drift.
-- **Example violation**: An agent fabricating an API endpoint not in the spec; an
-  agent merging its own PR; an agent ignoring a version-guard warning to "make the
-  build pass."
+Articles MUST be educational and interesting — not dry reference material. Every article
+MUST use at least one of the following: a relatable real-world scenario, a concrete worked
+example, a comparison table, a "why this matters to you" framing, a memorable analogy, or
+a question that prompts the reader to think. Engagement techniques MUST NOT come at the cost
+of accuracy (Principle II) or clarity (Principle I).
 
-### XVI. Definition of Done
-A task is "done" only when ALL of the following hold: (1) it maps to a spec
-requirement; (2) implementation passes type-check, lint, and format; (3) tests at
-the appropriate pyramid level pass and cover the requirement (VII); (4) performance
-budgets are met (XI); (5) a11y checks pass for UI (X); (6) security and privacy
-checks pass (XII); (7) docs and stories are updated (II, IX); (8)
-`speckit.verify.run` and `speckit.verify-tasks.run` certify the implementation;
-(9) a human has reviewed and approved.
+- **Rationale**: A technically accurate article that bores the reader fails to educate them.
+  Engagement is not decoration — it is the mechanism by which information becomes knowledge.
+- **Enforcement**: The non-developer readability check (Principle XII) MUST assess whether
+  the article would hold a non-technical reader's attention. Tasks MUST include an "add
+  example or analogy" step for every conceptual article.
+- **Example violation**: An article that reads as a definition list with no narrative thread;
+  a "why this matters" section that says only "this is important for AI development."
 
-- **Rationale**: A precise DoD prevents "phantom completions" where tasks are marked
-  done but the work is incomplete or fictional.
-- **Enforcement**: `/speckit.implement` MUST NOT mark a task `[X]` until all DoD
-  criteria pass; `speckit.verify-tasks.run` MUST audit task status against code.
-- **Example violation**: Marking a task done with failing tests; closing an issue
-  because "the code compiles"; merging without a11y or perf checks on a UI surface.
+### XI. Depth Without Overload
 
-## Engineering Constraints
+When a topic is complex, it MUST be split into multiple linked articles, each with one
+clear learning goal. No single article MUST introduce more than three to five new core
+concepts. Advanced technical details MUST be separated into optional advanced sections or
+dedicated advanced articles, clearly marked and linked from the main article. Readers MUST
+be able to leave any article with a complete understanding of its stated learning goal
+without needing to read the advanced section.
 
-- **Language & runtime versions**: Pinned in `version-guard` constraints (IV). No
-  feature may rely on a runtime/library version that is not pinned.
-- **Repository layout**: Modules MUST follow the boundary rules of Principle XIII.
-  Shared packages live under a clearly designated path (e.g., `packages/`, `libs/`).
-- **Configuration**: All configuration MUST be typed (V), schema-validated at load,
-  and documented in a single canonical file referenced from the spec (II).
-- **Data**: Schemas (DB, API, events) MUST be versioned; breaking changes require
-  a migration plan in `plan.md` and an explicit override note (III) if backward
-  compatibility is broken.
-- **Observability**: Production code MUST emit structured logs and metrics for the
-  user journeys named in the spec; logs MUST be PII-safe (XII).
+- **Rationale**: Cognitive overload is the primary reason educational content fails readers.
+  A single page that tries to teach everything about a topic teaches nothing well.
+- **Enforcement**: Every article spec MUST state one primary learning goal. `/speckit-analyze`
+  MUST flag specs with more than five core concepts in a single article without a splitting
+  plan. The review gate MUST verify the learning goal is achievable without the advanced section.
+- **Example violation**: A single article titled "AI" that covers history, model types,
+  training, inference, safety, regulation, and tools; burying the practical use case
+  behind seven prerequisites the reader must first understand.
 
-## Development Workflow & Quality Gates
+### XII. Review and Quality Gates (NON-NEGOTIABLE)
 
-The Spec Kit workflow is the mandatory path for any non-trivial change:
+No article is complete until it passes ALL of the following checks. These gates apply
+equally to AI-generated drafts and human-written drafts.
 
-1. `/speckit.specify` → produces `spec.md`. Gate: spec lists numbered, testable
-   requirements with acceptance criteria; includes Security & Privacy and (for UI)
-   a11y and UX sections.
-2. `/speckit.clarify` → resolves ambiguity. Gate: no `TBD`/`TODO` markers remain in
-   normative sections.
-3. `/speckit.plan` → produces `plan.md`. Gate: version-guard constraints written;
-   performance budgets declared (XI); module boundaries identified (XIII);
-   Constitution Check passes.
-4. `/speckit.tasks` → produces `tasks.md`. Gate: every task maps to a spec
-   requirement and a DoD slice (XVI); version-guard constraints loaded into context.
-5. `/speckit.implement` → executes tasks. Gate: each task satisfies XVI before being
-   marked `[X]`.
-6. `/speckit.analyze` → cross-artifact consistency check. Gate: spec ↔ plan ↔ tasks
-   ↔ code coherence; no orphan requirements; no fabricated tasks.
-7. **Post-implementation**: `speckit.verify.run`, `speckit.verify-tasks.run`,
-   `speckit.docguard.guard`, `speckit.version-guard.validate` MUST run; failures
-   block merge unless an explicit override (III) is filed.
+| Gate | Description |
+|------|-------------|
+| **Readability** | A non-developer can read and understand the article without external help |
+| **Factual accuracy** | All major claims are verified against cited, reliable sources |
+| **Source integrity** | No copied text; all borrowed ideas are synthesized and rewritten |
+| **Multilingual consistency** | All three language versions convey the same meaning and structure |
+| **Markdown portability** | Content renders correctly in GitBook, GitHub, and Obsidian |
+| **Terminology consistency** | All terms match the glossary; new terms are added to the glossary |
+| **Navigation** | All internal links resolve; prerequisites and related articles are declared |
+| **Copying/plagiarism risk** | No paragraph-length reproduction of source material |
+| **Template compliance** | Article follows the standard structure (Principle VIII) or has a documented exception |
+| **Learning goal** | The article achieves its stated learning goal without the advanced section |
 
-**Code review**: At least one human reviewer (not the agent operator alone) MUST
-approve every change. Reviewers MUST verify constitution compliance, not just code
-correctness.
+- **Rationale**: Without explicit, checkable gates, "done" is subjective. These gates make
+  completion verifiable and reviewable by anyone, including future AI agents.
+- **Enforcement**: `/speckit-tasks` MUST include a review task for each gate listed above.
+  `/speckit-analyze` MUST flag task lists missing review tasks. An article may NOT be
+  committed to `main` until all gates are documented as passed.
+
+### XIII. Versioning and Maintenance
+
+Every article MUST include frontmatter with: `date_created`, `date_modified`, `status`
+(draft | active | deprecated), and `review_cycle` (stable | periodic | fast-changing).
+Articles about fast-changing subjects (specific model versions, regulatory status, market
+trends, product pricing) MUST be tagged `review_cycle: fast-changing` and reviewed at least
+every six months. Articles about stable conceptual topics MAY be tagged `review_cycle: stable`
+and reviewed annually. Deprecated articles MUST be marked and linked to their replacement.
+
+- **Rationale**: AI evolves rapidly. An article accurate today may be misleading in six months.
+  Without explicit maintenance metadata, outdated content accumulates invisibly and silently
+  degrades reader trust.
+- **Enforcement**: The article template MUST include the required frontmatter fields.
+  `/speckit-specify` MUST require a `review_cycle` declaration in every article spec.
+  The review gate (Principle XII) MUST check that frontmatter is present and complete.
+- **Example violation**: An article about "GPT-4 capabilities" with no review date; an
+  article about the EU AI Act published in 2024 still marked "active" in 2026 without review.
+
+### XIV. Separation of Concerns
+
+The following layers of this project MUST NOT be mixed:
+
+| Layer | Responsibility |
+|-------|----------------|
+| **Constitution** | Non-negotiable principles and governance rules |
+| **Feature specification** | What content is needed, for whom, and why |
+| **Implementation plan** | How the content will be researched, written, and structured |
+| **Article draft** | Reader-facing educational content focused on learning outcomes |
+| **Translation** | Language-adapted version of an approved article |
+| **Review record** | Gate results, corrections, and approvals |
+
+A spec MUST describe the content need without prescribing article wording. A plan MUST
+describe the research and writing approach without writing the article. An article MUST not
+embed editorial process notes. These concerns MUST be kept in separate files.
+
+- **Rationale**: Mixing concerns makes artifacts harder to review, maintain, and hand off.
+  A spec that contains draft article text conflates two different decisions at different
+  quality levels.
+- **Enforcement**: `/speckit-specify` MUST reject specs containing article prose.
+  `/speckit-analyze` MUST flag plans that attempt to pre-write article content.
+- **Example violation**: A spec for "Write an article about RAG" that includes a draft
+  introduction paragraph; a plan.md that contains translated article sentences.
+
+### XV. Human Editorial Judgment (NON-NEGOTIABLE)
+
+AI assistance MAY be used to draft, translate, summarize, research, and structure content.
+However, final wiki content MUST be reviewed by a human as educational material intended for
+real readers before being merged to `main`. The review MUST assess clarity, usefulness,
+trustworthiness, and long-term maintainability — not only whether the text is grammatically
+correct. AI agents MUST NOT self-approve their own content contributions. Speed of generation
+MUST NOT take priority over quality of reader experience.
+
+- **Rationale**: AI-generated content can be fluent but subtly inaccurate, culturally
+  inappropriate, or misleading in ways that only a human reader notices. The wiki's
+  credibility depends on human editorial accountability, not automated throughput.
+- **Enforcement**: CODEOWNERS or branch protection MUST require at least one human reviewer
+  approval for any merge to `main`. `/speckit-implement` MUST NOT auto-merge wiki articles.
+  The review record (Principle XIV) MUST include the human reviewer's name and date.
+- **Example violation**: An AI agent committing a translated article directly to `main`
+  without human review; merging a draft because it "passed the quality gate script" without
+  a human reading the content.
+
+## Content Constraints
+
+- **Language scope**: Korean (`wiki/ko/`), English (`wiki/en/`), Japanese (`wiki/ja/`) are
+  the three canonical languages. All three MUST be present before an article is complete.
+- **Article types**: Conceptual articles follow Principle VIII. Other types (tool overviews,
+  source summaries, glossary entries, index pages) follow their respective templates in
+  `.wiki/templates/`.
+- **Frontmatter**: All articles MUST include the mandatory frontmatter fields defined in
+  `CLAUDE.md` (`title`, `tags`, `category`, `language`, `date_created`, `date_modified`,
+  `source_count`, `status`, `review_cycle`).
+- **Source materials**: `raw/` directory files MUST NOT be modified. They are read-only
+  inputs. All wiki content is generated in `wiki/`.
+- **Links**: Internal links MUST use relative paths. External links MUST be verified as
+  accessible at time of writing and cited in "Further reading."
+- **Images and diagrams**: Image references MUST use standard Markdown syntax. Alt text
+  MUST describe the image content for screen readers and plain-text environments.
+- **AI content disclosure**: Articles substantially drafted by AI MUST be reviewed per
+  Principle XV before merging. The review record file MUST note AI involvement.
+
+## Editorial Workflow & Quality Gates
+
+The Spec Kit workflow is the mandatory path for any new article or significant revision:
+
+1. `/speckit-specify` → produces `spec.md`. Gate: spec declares target audience, all three
+   language scopes, article type, learning goal, and review cycle; no article prose present
+   (Principle XIV); Constitution Check section passes.
+
+2. `/speckit-clarify` → resolves ambiguity. Gate: learning goal is unambiguous; target
+   reader is precisely defined; no `TBD` markers remain in normative sections.
+
+3. `/speckit-plan` → produces `plan.md`. Gate: research sources identified; translation
+   approach confirmed; article structure aligned with Principle VIII; all ten quality gates
+   (Principle XII) are assigned to tasks; Constitution Check passes.
+
+4. `/speckit-tasks` → produces `tasks.md`. Gate: every task maps to a spec requirement;
+   tasks exist for all three languages; review tasks exist for all ten quality gates;
+   glossary update task included when new terms are introduced.
+
+5. `/speckit-implement` → executes tasks (drafts, translates, structures content). Gate:
+   each task satisfies the Definition of Done before being marked `[X]`:
+   (a) content written and structured per template, (b) terminology checked against glossary,
+   (c) internal links verified, (d) frontmatter complete, (e) all three languages present.
+
+6. `/speckit-analyze` → cross-artifact consistency check. Gate: spec ↔ plan ↔ tasks ↔
+   article coherence; all ten quality gates assigned and tracked; no orphan requirements.
+
+7. **Human review** (Principle XV): A human reviewer MUST read the article in at least one
+   language and confirm all ten quality gates (Principle XII) before merge to `main`.
+
+8. **Post-merge**: `wiki/index.md` and `wiki/log.md` MUST be updated. Slack notification
+   MUST be sent per `CLAUDE.md`.
+
+**Content review**: At least one human reviewer MUST approve every article merge. Reviewers
+MUST verify educational quality and constitutional compliance, not only grammar and formatting.
 
 ## Governance
 
-This constitution supersedes all other practices, conventions, and AI-agent
-defaults. Conflicts MUST be resolved in favor of this document.
+This constitution supersedes all other editorial practices, conventions, and AI-agent defaults
+for this repository. Conflicts MUST be resolved in favor of this document.
 
 **Amendment procedure**:
-1. Propose the amendment as a PR modifying `.specify/memory/constitution.md`,
-   including an updated Sync Impact Report and the rationale.
-2. The PR MUST update dependent templates (`plan-template.md`,
-   `spec-template.md`, `tasks-template.md`) and command guidance to remain
-   consistent.
-3. Approval requires at least one maintainer; substantive principle changes
-   (MAJOR) require team consensus documented in the PR.
-4. On merge, run `/speckit.constitution` to confirm propagation and bump the
-   version.
+1. Propose the amendment as a PR modifying `.specify/memory/constitution.md`, including an
+   updated Sync Impact Report and a clear rationale for the change.
+2. The PR MUST update dependent templates (`plan-template.md`, `spec-template.md`,
+   `tasks-template.md`) and any affected skill guidance files to remain consistent.
+3. Approval requires at least one maintainer. MAJOR changes require team consensus documented
+   in the PR body.
+4. On merge, run `/speckit-constitution` to confirm propagation and version bump.
 
 **Versioning policy** (semantic):
-- **MAJOR**: Removing or redefining a principle in a backward-incompatible way,
-  or removing a governance rule.
-- **MINOR**: Adding a new principle, materially expanding an existing one, or
-  adding a new mandatory gate.
-- **PATCH**: Wording, clarifications, typo fixes, non-semantic refinements.
+- **MAJOR**: Removing or redefining a principle in a backward-incompatible way; removing
+  a mandatory quality gate; changing the core audience definition.
+- **MINOR**: Adding a new principle; materially expanding an existing one; adding a new
+  mandatory gate or content constraint.
+- **PATCH**: Wording clarifications, typo fixes, example updates, non-semantic refinements.
 
-**Compliance review**: Every PR description MUST include a "Constitution Check"
-note confirming the principles touched and any overrides filed. `/speckit.analyze`
-SHOULD be run on any branch before requesting review. Quarterly, the maintainers
-SHOULD audit a sample of merged PRs against this constitution and file follow-ups
-for any drift.
+**Compliance review**: Every PR description MUST include a "Constitution Check" note
+confirming which principles are relevant and whether any exceptions are filed. `/speckit-analyze`
+SHOULD run on any branch before requesting human review. Every six months, maintainers SHOULD
+audit a sample of merged articles against this constitution and file follow-ups for any drift.
 
-**Runtime guidance**: Day-to-day agent behavior is configured via `CLAUDE.md` and
-the `.claude/skills/` directory; those files MUST NOT contradict this constitution.
-When they do, this constitution wins and the guidance files MUST be amended.
+**Runtime guidance**: Day-to-day agent behavior is configured via `CLAUDE.md` and the
+`.claude/skills/` directory. Those files MUST NOT contradict this constitution. When they do,
+this constitution wins and the guidance files MUST be amended.
 
-**Version**: 1.0.0 | **Ratified**: 2026-05-13 | **Last Amended**: 2026-05-13
+**Exception documentation**: Any deliberate deviation from a principle MUST be recorded in
+the relevant spec or plan with: (a) the principle overridden, (b) the reason, (c) the
+approver, and (d) a review or expiry date.
+
+**Version**: 2.0.0 | **Ratified**: 2026-05-13 | **Last Amended**: 2026-05-19
