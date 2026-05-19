@@ -35,7 +35,7 @@
 
 ### SDD (Spec-Driven Development)
 
-- [[Spec-Driven Development (SDD)]] — 코드 작성 전에 명세를 먼저 정의하는 개발 방법론. BDD/TDD와의 비교 및 Kiro·Spec-Kit 연결 (updated: 2026-05-18, sources: 0)
+- [[Spec-Driven Development (SDD)]] — 코드 작성 전에 명세서를 먼저 정의하는 개발 방법론. 비개발자를 위한 비유, SDD 6단계 워크플로우, BDD/TDD/바이브 코딩 비교표, 오해 정정, AI 코딩 에이전트 맥락 포함. 22개 섹션 전체 포함 (updated: 2026-05-19, sources: 0)
 
 ### Kiro
 
@@ -74,7 +74,7 @@
 
 ### SDD (Spec-Driven Development)
 
-- [[Spec-Driven Development (SDD)]] — Methodology where specs are written before code. Covers BDD/TDD comparison and Kiro/Spec-Kit connections (updated: 2026-05-18, sources: 0)
+- [[Spec-Driven Development (SDD)]] — Methodology where a specification is written before code. Covers plain-language analogy, the 6-stage SDD workflow, comparison table vs TDD/BDD/vibe coding, common misconceptions, and AI coding agent context. All 22 required sections included (updated: 2026-05-19, sources: 0)
 
 ### Kiro
 
@@ -113,7 +113,7 @@
 
 ### SDD (Spec-Driven Development)
 
-- [[Spec-Driven Development (SDD)]] — コードを書く前に仕様を先に定義する開発手法。BDD/TDDとの比較およびKiro・Spec-Kitとの連携を網羅 (updated: 2026-05-18, sources: 0)
+- [[Spec-Driven Development (SDD)]] — コードを書く前に仕様書を先に定義する開発手法。非エンジニア向けのたとえ話、SDD 6段階ワークフロー、TDD/BDD/バイブコーディングとの比較表、よくある誤解、AIコーディングエージェントの文脈を含む全22セクション収録 (updated: 2026-05-19, sources: 0)
 
 ### Kiro
 

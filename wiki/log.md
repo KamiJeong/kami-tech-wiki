@@ -45,6 +45,15 @@
 총 6개 파일 생성. wiki/index.md에 한국어·English·日本語 Codex 섹션 추가. 각 로케일 SUMMARY.md 업데이트 완료.
 Source: https://openai.com/codex
 
+## [2026-05-19 00:00] ingest | Spec-Driven Development (ko/en/ja) — 22-section full replacement
+
+인제스트 범위:
+- wiki/ko/sdd/index.md — SDD 완전 재작성. 22개 섹션: 비개발자 비유, AI 코딩 에이전트 정의, 6단계 워크플로우, 명세서/원칙 문서 정의, 방법론 비교표(SDD/전통/TDD/BDD/바이브코딩), 활용/비활용 시나리오, 오해 정정, 실제 예시, 바이브 코딩 정의, 장점, 위험/한계, 용어집, 관련 문서, 출처 포함 (source_count: 0)
+- wiki/en/sdd/index.md — Full replacement with all 22 sections. Natural English translation with plain-language analogy, 6-stage workflow, comparison table, misconceptions, practical example, vibe coding contrast, glossary, references (source_count: 0)
+- wiki/ja/sdd/index.md — 全22セクションを含む完全置き換え。自然な日本語翻訳。非エンジニア向けたとえ話、6段階ワークフロー、比較表、よくある誤解、実践例、バイブコーディングとの対比、用語集、参考資料を含む (source_count: 0)
+既存ファイル上書き (CR-000). バックアップなし. wiki/index.md 3言語エントリ更新完了.
+Sources: Kent Beck TDD (2002), Dan North BDD (dannorth.net), Anthropic Claude Code docs (2025-08), Kiro (kiro.dev)
+
 ## [2026-05-18 09:00] ingest | SDD Wiki — Spec-Driven Development, Kiro, and Spec-Kit
 
 인제스트 범위:
