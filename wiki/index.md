@@ -39,11 +39,15 @@
 
 ### Kiro
 
-- [[Kiro]] — AWS AI 기반 IDE. 스티어링 파일·스펙 문서·에이전트 태스크·오토파일럿 모드로 SDD를 IDE 수준에서 구현 (updated: 2026-05-18, sources: 0)
+- [[Kiro 아티클 시리즈]] — Kiro의 에이전틱 IDE/CLI, 명세서, 스티어링, 훅, MCP, 핸즈온 튜토리얼을 설명하는 11개 페이지 시리즈 (updated: 2026-05-22, sources: 0)
 
 ### Spec-Kit
 
-- [[Spec-Kit]] — Claude Code 기반 SDD 워크플로우 도구. specify→clarify→plan→tasks→implement→verify 6단계 파이프라인 (updated: 2026-05-18, sources: 8)
+- [[Spec-Kit 아티클 시리즈]] — GitHub Spec Kit의 SDD 워크플로우, 명령어, 실습, 모범 사례, 위험을 설명하는 10개 페이지 시리즈 (updated: 2026-05-22, sources: 0)
+
+### 도구 비교
+
+- [[Kiro vs GitHub Spec Kit]] — Kiro와 GitHub Spec Kit의 목적, 인터페이스, 워크플로우, 적합한 사용 사례를 비교하는 페이지 (updated: 2026-05-22, sources: 2)
 
 ---
 
@@ -78,11 +82,15 @@
 
 ### Kiro
 
-- [[Kiro]] — AWS AI-powered IDE. Implements SDD through steering files, spec documents, agent tasks, and autopilot mode (updated: 2026-05-18, sources: 0)
+- [[Kiro Article Series]] — 11-page series explaining Kiro as an agentic IDE/CLI, including specs, steering, hooks, MCP, and a hands-on tutorial (updated: 2026-05-22, sources: 0)
 
 ### Spec-Kit
 
-- [[Spec-Kit]] — Claude Code SDD workflow tool. specify→clarify→plan→tasks→implement→verify six-stage pipeline (updated: 2026-05-18, sources: 8)
+- [[Spec-Kit Article Series]] — 10-page series explaining GitHub Spec Kit's SDD workflow, commands, tutorial, best practices, and risks (updated: 2026-05-22, sources: 0)
+
+### Tool Comparisons
+
+- [[Kiro vs GitHub Spec Kit]] — Comparison of purpose, interface, workflow style, and best-fit use cases for Kiro and GitHub Spec Kit (updated: 2026-05-22, sources: 2)
 
 ---
 
@@ -117,8 +125,12 @@
 
 ### Kiro
 
-- [[Kiro]] — AWS AI搭載IDE。スティアリングファイル・スペックドキュメント・エージェントタスク・オートパイロットモードでSSDをIDE水準で実装 (updated: 2026-05-18, sources: 0)
+- [[Kiro アーティクルシリーズ]] — KiroのエージェンティックIDE/CLI、仕様書、ステアリング、フック、MCP、ハンズオンチュートリアルを説明する11ページ構成のシリーズ (updated: 2026-05-22, sources: 0)
 
 ### Spec-Kit
 
-- [[Spec-Kit]] — Claude Code SDDワークフローツール。specify→clarify→plan→tasks→implement→verify の6段階パイプライン (updated: 2026-05-18, sources: 8)
+- [[Spec-Kit アーティクルシリーズ]] — GitHub Spec KitのSDDワークフロー、コマンド、チュートリアル、ベストプラクティス、リスクを説明する10ページ構成のシリーズ (updated: 2026-05-22, sources: 0)
+
+### ツール比較
+
+- [[KiroとGitHub Spec Kitの違い]] — KiroとGitHub Spec Kitの目的、インターフェース、ワークフロー、適した利用場面を比較するページ (updated: 2026-05-22, sources: 2)

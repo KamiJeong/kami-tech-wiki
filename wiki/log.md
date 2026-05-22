@@ -67,3 +67,11 @@ Sources: Kent Beck TDD (2002), Dan North BDD (dannorth.net), Anthropic Claude Co
 - wiki/en/spec-kit/ — Spec-Kit English tool article (source_count: 8)
 - wiki/ja/spec-kit/ — Spec-Kit 日本語ツール記事 (source_count: 8)
 총 18개 파일 생성 (각 토픽별 README.md + index.md × 3언어). wiki/index.md에 한국어·English·日本語 SDD·Kiro·Spec-Kit 섹션 추가. 각 로케일 SUMMARY.md 업데이트 완료.
+
+## [2026-05-22 14:09] create | Multilingual Wiki Series — Kiro & GitHub Spec Kit
+
+생성 범위:
+- wiki/en/kiro/, wiki/ko/kiro/, wiki/ja/kiro/ — Kiro 시리즈 11페이지 × 3언어
+- wiki/en/spec-kit/, wiki/ko/spec-kit/, wiki/ja/spec-kit/ — GitHub Spec Kit 시리즈 10페이지 × 3언어
+- wiki/en/kiro-vs-spec-kit.md, wiki/ko/kiro-vs-spec-kit.md, wiki/ja/kiro-vs-spec-kit.md — 비교 페이지 × 3언어
+총 69개 시리즈 페이지 생성. wiki/index.md 및 각 로케일 SUMMARY.md 업데이트. 기존 archived 파일 제거.
