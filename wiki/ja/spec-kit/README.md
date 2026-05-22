@@ -6,7 +6,7 @@ category: tool
 tool: "Spec-Kit"
 language: ja
 date_created: 2026-05-18
-date_modified: 2026-05-18
+date_modified: 2026-05-22
 source_count: 8
 related: ["Spec-Driven Development (SDD)", "Kiro"]
 status: active
@@ -22,5 +22,5 @@ Spec-Kit は Claude Code 環境で Spec-Driven Development (SDD) を実践する
 
 ## 連携する概念
 
-- [[Spec-Driven Development (SDD)]] — Spec-Kit が実装する開発手法
-- [[Kiro]] — IDE 環境での AWS の SDD 実装ツール
+- [Spec-Driven Development (SDD)](../sdd/index.md) — Spec-Kit が実装する開発手法
+- [Kiro](../kiro/index.md) — IDE 環境での AWS の SDD 実装ツール

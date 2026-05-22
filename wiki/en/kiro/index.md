@@ -1,131 +1,51 @@
 ---
-title: "Kiro"
-aliases: ["Kiro IDE", "AWS Kiro"]
-tags: [kiro, aws, ai-ide, tool]
-category: tool
+title: "Kiro — Article Series"
+aliases: ["Kiro wiki", "Kiro documentation"]
+tags: [kiro, series, index, aws, agentic-ide]
+category: reference
 tool: "Kiro"
 language: en
-date_created: 2026-05-18
-date_modified: 2026-05-18
+date_created: 2026-05-19
+date_modified: 2026-05-19
 source_count: 0
-related: ["Spec-Driven Development (SDD)", "Spec-Kit"]
-status: active
+related: ["Kiro vs Spec-Kit", "Spec-Driven Development (SDD)"]
+status: draft
+review_cycle: fast-changing
+freshness_date: 2026-05-19
 ---
 
-# Kiro
+# Kiro — Article Series
 
-> **Freshness Notice**: The information on this page reflects the state of Kiro as of 2026-05-18. Kiro is under active development and features, interfaces, and availability may change. Always check the official site at [https://kiro.dev](https://kiro.dev) for the latest information.
+> A beginner-friendly guide to Kiro, the AWS agentic IDE and CLI that replaces informal AI prompts with structured, specification-driven development.
 
----
+## Articles in this series
 
-## What is Kiro?
+| # | Article | What you'll learn |
+|---|---------|------------------|
+| 01 | [What Is Kiro?](01-what-is-kiro.md) | What Kiro is, who makes it, and why it exists |
+| 02 | [Why Kiro Matters](02-why-kiro-matters.md) | The problem Kiro solves and why structured specs help |
+| 03 | [Core Concepts: Workflow](03-core-concepts.md) | Specs, Steering, and Hooks — the three pillars of the Kiro workflow |
+| 03a | [Core Concepts: Environment](03a-environment-overview.md) | Agentic Chat, MCP servers, and IDE vs. CLI |
+| 04 | [How Kiro Specs Work](04-specs-workflow.md) | The full spec lifecycle: requirements → design → tasks → execute |
+| 05 | [Kiro Steering Guide](05-steering.md) | How to give the AI persistent, project-wide guidance |
+| 06 | [Kiro Hooks Guide](06-hooks.md) | Automating AI actions on file events |
+| 07 | [Kiro MCP Guide](07-mcp.md) | Connecting Kiro to external tools, APIs, and databases |
+| 08 | [Hands-on Tutorial](08-tutorial.md) | Build a personal task tracker step by step |
+| 09 | [Best Practices](09-best-practices.md) | Practical advice for getting the most from Kiro |
+| 10 | [Glossary](10-glossary.md) | Quick reference for all Kiro terms |
 
-Kiro is an AI-powered integrated development environment (IDE) built by AWS. It is based on VS Code, which means developers can bring their existing VS Code extensions and settings, while gaining a purpose-built Spec-Driven Development ([[Spec-Driven Development (SDD)|SDD]]) workflow on top.
+## Prerequisites
 
-The core philosophy of Kiro is "spec before code." A developer describes a feature in natural language, and Kiro's AI agent generates structured spec documents, decomposes them into implementation tasks, and writes the code — all driven by the specification.
+Before reading this series, it helps to know:
+- What an AI coding assistant is (e.g., GitHub Copilot, Claude Code) — no article yet, but a basic familiarity is enough
+- [Spec-Driven Development (SDD)](../sdd/index.md) — understanding SDD gives Kiro's design philosophy full context
 
----
+## Start here
 
-## Core Concepts
+→ **[01. What Is Kiro?](01-what-is-kiro.md)** — Start with this article if you're new to Kiro.
 
-### Steering Files
+## Related series
 
-Steering files are markdown files that define how the Kiro agent behaves throughout a project. They capture coding conventions, architectural principles, naming rules, and forbidden patterns, stored under `.kiro/steering/`. The agent reads these files at the start of every session, ensuring consistent code generation across the entire project lifecycle.
-
-For example, a steering file might specify "all API responses must use a common envelope format." Every time Kiro generates an API handler, it will automatically follow this rule.
-
-### Spec Documents
-
-Kiro's spec system revolves around three files:
-
-- **requirements.md**: Defines user stories and functional requirements. Includes acceptance criteria in the format "As a user, I want to..." with measurable conditions.
-- **design.md**: Covers technical architecture, data models, API contracts, and component structure. This answers "how to build it" before a single line of code is written.
-- **tasks.md**: A dependency-ordered list of implementation tasks derived from the design. Each task is independently completable and traceable to a requirement.
-
-### Agent Tasks
-
-Agent tasks are the concrete implementation units derived from the spec. A developer selects a task and assigns it to the Kiro agent. The agent reads the relevant spec documents and steering files, implements the task, and performs a self-check against the acceptance criteria before marking the task complete.
-
-### Autopilot Mode
-
-Autopilot mode allows Kiro to complete all tasks in a spec without human intervention between steps. The developer defines the spec, activates autopilot, and reviews the final result. This mode is particularly effective for initial feature scaffolding and repetitive implementation work where the spec is detailed enough to guide the agent through the full workflow.
-
----
-
-## Usage Scenarios
-
-| Good fit | Poor fit |
-|----------|----------|
-| Defining a spec first and letting AI implement it | Quickly editing already-written code |
-| Enforcing consistent coding conventions across a team | Rapid prototyping without upfront design |
-| Breaking a complex feature into traceable tasks | Working in a language or framework with limited Kiro support |
-
----
-
-## Quick Start
-
-The following is a basic Kiro workflow for a new feature:
-
-```bash
-# 1. Install Kiro and open your project
-#    (Download the installer from kiro.dev)
-
-# 2. Create a new spec
-#    Command Palette → "Kiro: New Spec"
-#    or manually create a folder under .kiro/specs/
-
-# 3. Write requirements in requirements.md
-# Example:
-# ## User Stories
-# - As a user, I want to log in with email and password
-#   - Acceptance: Login completes within 2 seconds
-#   - Acceptance: Invalid credentials show an error message
-
-# 4. Ask Kiro to generate design.md
-#    "Based on requirements.md, generate the technical design"
-
-# 5. Ask Kiro to generate tasks.md
-#    "Break the design into implementation tasks"
-
-# 6. Execute tasks
-#    Select a task → "Run with Kiro Agent"
-#    Or activate autopilot:
-#    Command Palette → "Kiro: Run Autopilot"
-```
-
-**Result**: The Kiro agent reads the spec documents and generates code that satisfies the defined requirements, then runs a self-verification pass against the acceptance criteria.
-
-> [!tip] Getting started
-> Start with steering files before writing your first spec. Define your tech stack, naming conventions, and architectural rules in `.kiro/steering/conventions.md` — this ensures every agent action respects your project standards from the very first task.
-
----
-
-## Relationship to SDD
-
-Kiro is a concrete IDE-level implementation of Spec-Driven Development ([[Spec-Driven Development (SDD)|SDD]]). The SDD principle of "spec-first" maps directly to Kiro's three-document spec system. "Living specification" maps to Kiro's ability to update spec documents as implementation progresses. "Iterative refinement" maps to the task-by-task execution and verification cycle that Kiro enforces by design.
-
-Using Kiro is, in practice, practicing SDD with IDE-level tooling support.
-
----
-
-## Integration & Connections
-
-- **SDD methodology**: The foundational approach Kiro implements → [[Spec-Driven Development (SDD)]]
-- **Spec-Kit**: The same SDD approach in the Claude Code environment → [[Spec-Kit]]
-
----
-
-## Limitations
-
-> [!warning] Known constraints
-> - **Platform support**: As of 2026-05-18, Kiro supports macOS and Windows. Linux support may be limited. Check the official site for the current platform matrix.
-> - **Language and framework coverage**: Not all languages and frameworks have the same level of agent support. Autopilot accuracy depends heavily on spec detail — vague specs produce vague code.
-
-> [!note] Under active development
-> Kiro is a rapidly evolving product. Features, UI, and APIs may change with updates. The information on this page is accurate as of 2026-05-18. Refer to the official documentation for the latest details.
-
----
-
-## References
-
-- [Kiro official site](https://kiro.dev) — AWS Kiro IDE official documentation and download (2026-05-18)
+- [Spec-Driven Development (SDD)](../sdd/index.md)
+- [GitHub Spec Kit](../spec-kit/index.md)
+- [Kiro vs GitHub Spec Kit](../kiro-vs-spec-kit.md)

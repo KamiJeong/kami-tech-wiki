@@ -6,7 +6,7 @@ category: tool
 tool: "Kiro"
 language: en
 date_created: 2026-05-18
-date_modified: 2026-05-18
+date_modified: 2026-05-22
 source_count: 0
 related: ["Spec-Driven Development (SDD)", "Spec-Kit"]
 status: active
@@ -22,5 +22,5 @@ Kiro is an AI-powered IDE developed by AWS, built on VS Code, with a built-in Sp
 
 ## Connected Concepts
 
-- [[Spec-Driven Development (SDD)]] — The development methodology that Kiro implements
-- [[Spec-Kit]] — SDD implementation tool for the Claude Code environment
+- [Spec-Driven Development (SDD)](../sdd/index.md) — The development methodology that Kiro implements
+- [Spec-Kit](../spec-kit/index.md) — SDD implementation tool for the Claude Code environment

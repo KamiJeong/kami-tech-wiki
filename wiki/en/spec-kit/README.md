@@ -6,7 +6,7 @@ category: tool
 tool: "Spec-Kit"
 language: en
 date_created: 2026-05-18
-date_modified: 2026-05-18
+date_modified: 2026-05-22
 source_count: 8
 related: ["Spec-Driven Development (SDD)", "Kiro"]
 status: active
@@ -22,5 +22,5 @@ Spec-Kit is a Spec-Driven Development (SDD) workflow tool built into the Claude 
 
 ## Connected Concepts
 
-- [[Spec-Driven Development (SDD)]] — The development methodology that Spec-Kit implements
-- [[Kiro]] — AWS's SDD implementation tool for IDE environments
+- [Spec-Driven Development (SDD)](../sdd/index.md) — The development methodology that Spec-Kit implements
+- [Kiro](../kiro/index.md) — AWS's SDD implementation tool for IDE environments
