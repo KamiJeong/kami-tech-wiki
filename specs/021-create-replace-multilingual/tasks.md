@@ -265,7 +265,7 @@
 - [X] T101 Update `wiki/index.md` to add entries for Kiro series, Spec Kit series, and comparison page
 - [X] T102 [P] Update `wiki/log.md` with operation record: `## [2026-05-22 HH:MM] create | Multilingual Wiki Series — Kiro & GitHub Spec Kit (69 pages, ko/en/ja)`
 - [X] T103 [P] Remove archived files (delete `_archived-index.md` and `_archived-README.md` from all kiro/ and spec-kit/ directories in all three languages — 12 archived files)
-- [ ] T104 Send Slack notification per CLAUDE.md instructions: `bun run .wiki/scripts/notify-slack.ts --operation ingest --pages "Kiro Series (12 files), Spec Kit Series (10 files), Comparison" --summary "69-page multilingual wiki series created for Kiro and GitHub Spec Kit"`
+**Slack notification**: Removed from this feature gate by user decision on 2026-05-22. This feature no longer blocks on `SLACK_WEBHOOK_URL`.
 
 ---
 
@@ -325,4 +325,4 @@ A task is complete when:
 3. Commit after Phase 13 (Japanese batch complete)
 4. Final merge after Phase 15 (human approval)
 
-**Total tasks**: 104 (T001–T104)
+**Total tasks**: 103 executable tasks (T001–T103). Slack notification was removed as a feature gate.

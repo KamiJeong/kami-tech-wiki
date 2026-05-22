@@ -27,20 +27,20 @@
 
 ## Open External Gates
 
-The following tasks remain intentionally open because they require human or environment input:
+The following tasks remain intentionally open because they require human editorial input:
 
 - `T097`: Human review of representative English sample.
 - `T098`: Human review of Korean equivalents.
 - `T099`: Apply human reviewer corrections if any are requested.
 - `T100`: Record reviewer name, date, pages reviewed, gates confirmed, and corrections applied.
-- `T104`: Slack notification. This environment does not have `SLACK_WEBHOOK_URL` set.
+
+Slack notification was removed from this feature gate by user decision on 2026-05-22.
 
 ## Remaining Risks
 
 - Human editorial approval is not recorded yet, so the draft PR should not be merged until `T097` through `T100` are completed.
-- Slack notification could not be sent in this run because `SLACK_WEBHOOK_URL` is missing from the environment.
 - Locale parity validation still warns that `wiki/ko/claude/overview.md` has no English or Japanese counterpart. This is pre-existing and outside this feature scope.
 
 ## Recommendation
 
-Open a draft PR for human editorial review. After review corrections are applied and `SLACK_WEBHOOK_URL` is available, rerun the pipeline or send the notification manually, then mark the issue done.
+Open a draft PR for human editorial review. After review corrections are applied and reviewer approval is recorded, mark the issue done.
