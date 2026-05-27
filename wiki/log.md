@@ -75,3 +75,12 @@ Sources: Kent Beck TDD (2002), Dan North BDD (dannorth.net), Anthropic Claude Co
 - wiki/en/spec-kit/, wiki/ko/spec-kit/, wiki/ja/spec-kit/ — GitHub Spec Kit 시리즈 10페이지 × 3언어
 - wiki/en/kiro-vs-spec-kit.md, wiki/ko/kiro-vs-spec-kit.md, wiki/ja/kiro-vs-spec-kit.md — 비교 페이지 × 3언어
 총 69개 시리즈 페이지 생성. wiki/index.md 및 각 로케일 SUMMARY.md 업데이트. 기존 archived 파일 제거.
+
+## [2026-05-28 08:20] create | Atlassian Rovo 개요
+
+생성 범위:
+- wiki/ko/atlassian-rovo/README.md — Atlassian Rovo 섹션 개요
+- wiki/ko/atlassian-rovo/index.md — Rovo Search, Chat, Agents, Studio, MCP Server, Forge Rovo Agent, 서버 활용 가능 케이스를 설명하는 한국어 초안
+- specs/023-atlassian-rovo/ — Spec Kit 산출물
+wiki/index.md 및 wiki/ko/SUMMARY.md 업데이트 완료.
+Sources: Atlassian Rovo Support, Atlassian Rovo MCP Server Support, Rovo Studio Support, Forge Rovo Agent developer docs, Atlassian MCP announcement.

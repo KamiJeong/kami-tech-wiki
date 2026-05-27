@@ -1,0 +1,19 @@
+{
+  "feature_dir": "/projects/company/kami-tech-wiki/specs/023-atlassian-rovo",
+  "mode": "auto-implement",
+  "stage": "pr-creation",
+  "status": "blocked",
+  "blocked_reason": "git push failed with GitHub 403: Permission to KamiJeong/kami-tech-wiki.git denied to sfood-jjh",
+  "stages_completed": [
+    "specify",
+    "clarify",
+    "checklist",
+    "plan",
+    "tasks",
+    "analyze",
+    "guard",
+    "implement",
+    "review"
+  ],
+  "timestamp": "2026-05-28T08:22:54+09:00"
+}

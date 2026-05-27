@@ -25,6 +25,10 @@
 - [[OpenUI API 레퍼런스 개요]] — 5개 패키지 및 CLI 도구 전체 참조 (updated: 2026-05-15, sources: 0)
 - [[@openuidev/react-ui API]] — FullScreen, Copilot, BottomTray 레이아웃 컴포넌트 API (updated: 2026-05-15, sources: 0)
 
+### Atlassian Rovo
+
+- [[Atlassian Rovo란 무엇인가?]] — Jira, Confluence, Compass 맥락에서 검색·채팅·에이전트·Studio·MCP Server를 제공하는 Atlassian AI 제품군 개요 (updated: 2026-05-28, sources: 6)
+
 ### Codex
 
 - [[Codex 소개]] — OpenAI의 AI 소프트웨어 엔지니어링 도구. 클라우드 에이전트와 CLI 두 가지 형태로 자연어 기반 코드 생성·수정·실행 지원 (updated: 2026-05-18, sources: 1)
