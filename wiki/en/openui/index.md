@@ -5,7 +5,7 @@ tags: [openui, generative-ui, index]
 category: reference
 language: en
 date_created: 2026-05-15
-date_modified: 2026-05-15
+date_modified: 2026-05-28
 source_count: 0
 related: []
 status: active
@@ -31,6 +31,7 @@ The core of OpenUI — a streaming-first UI generation language and runtime.
 | [System Prompts](system-prompts.md) | Auto-generation of LLM system prompts |
 | [Benchmarks](benchmarks.md) | Up to 67% fewer tokens vs JSON — performance comparison |
 | [Architecture](architecture.md) | Library → Prompt → LLM → Parser → Renderer pipeline |
+| [Real-Time Personalization Case Reference](personalization-case-reference.md) | Evidence-labeled comparison of OpenUI feasibility and public personalization examples |
 
 ---
 

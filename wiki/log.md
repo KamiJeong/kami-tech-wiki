@@ -149,3 +149,13 @@ task list는 인벤토리, navigation 노출, Spec Kit/일반 문서 경계, 누
 
 wiki/index.md 및 wiki/ko/SUMMARY.md 업데이트 완료.
 Sources: Storybook docs/blog, Figma Dev Mode docs/blog, Anthropic Claude Code MCP docs, OpenAI Codex CLI docs/repository.
+
+## [2026-05-28 16:18] update | OpenUI Personalization Case Reference
+
+생성/갱신 범위:
+- wiki/ko/openui/personalization-case-reference.md, wiki/en/openui/personalization-case-reference.md, wiki/ja/openui/personalization-case-reference.md — OpenUI 실시간 개인화 화면 가능성, 10개 사례 매트릭스, 근거 상태, 권장 PoC 검증 방향을 담은 3개 언어 초안
+- wiki/glossary/openui-personalization-terms.md — OpenUI, 생성형 UI, 실시간 개인화, 적응형 화면, 근거 상태 등 용어 정리
+- wiki/ko/openui/index.md, wiki/en/openui/index.md, wiki/ja/openui/index.md, wiki/ko/SUMMARY.md, wiki/en/SUMMARY.md, wiki/ja/SUMMARY.md, wiki/index.md — 새 문서 링크 추가
+- specs/027-openui-https-www/review-gates.md — 출처 검증, 사례 분류, no-split 판단, Slack skip, 품질 게이트 기록
+
+출처 검증: 2026-05-28 기준 OpenUI 공식 문서/GitHub와 Netflix, Spotify, TikTok, YouTube, Amazon, Airbnb, Duolingo, Stitch Fix, AWS 문서를 실시간 확인했다. 공개 근거가 없는 사이트는 OpenUI 사용 사례로 표현하지 않고 비교 사례로 라벨링했다.

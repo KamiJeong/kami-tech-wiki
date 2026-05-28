@@ -5,7 +5,7 @@ tags: [openui, generative-ui, index]
 category: reference
 language: ko
 date_created: 2026-05-15
-date_modified: 2026-05-15
+date_modified: 2026-05-28
 source_count: 0
 related: []
 status: active
@@ -32,6 +32,7 @@ OpenUI의 핵심 — 스트리밍 우선 UI 생성 언어와 런타임.
 | [시스템 프롬프트](system-prompts.md) | LLM 시스템 프롬프트 자동 생성 원리 |
 | [벤치마크](benchmarks.md) | JSON 대비 최대 67% 토큰 절약 성능 비교 |
 | [아키텍처](architecture.md) | Library → Prompt → LLM → Parser → Renderer 파이프라인 |
+| [실시간 개인화 화면 사례 검토](personalization-case-reference.md) | OpenUI 가능성과 공개 개인화 사례를 근거 상태별로 비교 |
 
 ---
 
