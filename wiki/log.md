@@ -84,3 +84,58 @@ Sources: Kent Beck TDD (2002), Dan North BDD (dannorth.net), Anthropic Claude Co
 - specs/023-atlassian-rovo/ — Spec Kit 산출물
 wiki/index.md 및 wiki/ko/SUMMARY.md 업데이트 완료.
 Sources: Atlassian Rovo Support, Atlassian Rovo MCP Server Support, Rovo Studio Support, Forge Rovo Agent developer docs, Atlassian MCP announcement.
+
+## [2026-05-28 09:05] specify | 문서 시스템 재정비 및 노출 정책 명세
+
+작성 범위:
+- specs/024-document-system-restructure/ — 문서 인벤토리, 메뉴 노출, 링크 전용 문서 처리, Spec Kit/일반 문서 분리, 누락 문서, 삭제/보류/아카이브, 최신화 체크리스트 명세
+- .specify/intake/gitbook-spec-kit/ — 멀티 슬라이스 intake 산출물
+
+`auto-PR`은 현재 로컬 `speckit-auto` 스킬의 유효 모드가 아니므로, 실제 문서 재작성이나 PR 생성 없이 plan-only 명세 산출물로 기록.
+
+## [2026-05-28 09:28] specify | 문서 시스템 재정비 명세 보강
+
+보강 범위:
+- specs/024-document-system-restructure/spec.md — 사용자 요청 산출물 9종, 문서별 판단 기준, 범위/제외 범위, 성공 기준 보강
+- specs/024-document-system-restructure/checklists/requirements.md — `/speckit-specify` 품질 체크리스트 형식에 맞춰 재검증 결과 반영
+
+이 작업은 Spec Kit 명세 보강이며 위키 콘텐츠 인제스트/업데이트가 아니므로 Slack 알림은 전송하지 않음.
+
+## [2026-05-28 09:45] clarify | 문서 시스템 재정비 명세 clarification 반영
+
+반영 범위:
+- specs/024-document-system-restructure/spec.md — Spec Kit 산출물 인벤토리 범위, 메뉴/링크 변경 적용 수준, 누락 문서 처리 방식, 감사 산출물 위치, 저위험 navigation 변경 정의를 Clarifications에 기록
+
+이 작업은 Spec Kit 명세 clarification이며 위키 콘텐츠 인제스트/업데이트가 아니므로 Slack 알림은 전송하지 않음.
+
+## [2026-05-28 09:52] plan | 문서 시스템 재정비 planning 산출물 갱신
+
+갱신 범위:
+- specs/024-document-system-restructure/plan.md — clarification 결과를 반영한 구현 계획 재작성
+- specs/024-document-system-restructure/research.md — grouped Spec Kit inventory, 저위험 navigation 변경, 누락 문서 처리, 감사 산출물 위치 결정 기록
+- specs/024-document-system-restructure/data-model.md — grouped artifact, low-risk navigation change, publication summary 엔티티 추가
+- specs/024-document-system-restructure/contracts/documentation-audit-contract.md — 감사/노출/누락/저위험 navigation 계약 갱신
+- specs/024-document-system-restructure/quickstart.md — reviewer workflow 갱신
+- specs/024-document-system-restructure/version-guard-report.md — 현재 dependency 버전 확인 결과 기록
+
+DocGuard review와 version guard check를 planning 전 훅으로 실행했다. 이 작업은 Spec Kit planning 산출물 갱신이며 위키 콘텐츠 인제스트/업데이트가 아니므로 Slack 알림은 전송하지 않음.
+
+## [2026-05-28 09:56] tasks | 문서 시스템 재정비 task list 생성
+
+생성 범위:
+- specs/024-document-system-restructure/tasks.md — reader scenario별 58개 실행 task 생성
+
+task list는 인벤토리, navigation 노출, Spec Kit/일반 문서 경계, 누락/삭제/보류/유지보수 정책을 독립 검증 가능한 단계로 분리했다. 이 작업은 Spec Kit task 산출물 생성이며 위키 콘텐츠 인제스트/업데이트가 아니므로 Slack 알림은 전송하지 않음.
+
+## [2026-05-28 10:03] implement | 문서 시스템 재정비 감사 산출물 구현
+
+구현 범위:
+- specs/024-document-system-restructure/document-inventory.md — docs/wiki/specs 전체 문서 인벤토리 및 grouped Spec Kit artifact 인벤토리
+- specs/024-document-system-restructure/navigation-audit.md — 메뉴 노출, 링크 전용 문서, 저위험 navigation 변경 판단
+- specs/024-document-system-restructure/lifecycle-governance.md — Spec Kit/일반 문서 경계, 누락 문서, 최신화/삭제/보류/유지보수 정책
+- specs/024-document-system-restructure/validation-report.md — 계약 검증, 범위 guard, checklist 상태
+- specs/024-document-system-restructure/analysis.md — 구현 결과와 follow-up batch 요약
+- specs/024-document-system-restructure/tasks.md — 58개 task 완료 표시
+- .gitignore — 구현 전 setup verification에 따른 누락 ignore 패턴 보강
+
+이 작업은 canonical audit 산출물 구현이며 reader-facing wiki 콘텐츠/메뉴 변경이 아니므로 Slack 알림은 전송하지 않음.
