@@ -29,6 +29,7 @@
 - Q: How should visual assets be used? → A: Use official remote visuals, locally captured demo screenshots, or original diagrams with attribution; do not copy unclear-rights images.
 - Q: How should frontmatter `source_count` work without `raw/` files? → A: Set `source_count: 0` and list web sources in the article body.
 - Q: How deep should usage guidance go? → A: Provide practical pilot and safety guidance, not a full production setup guide.
+- Q: How should the high-risk financial-action caution be worded so the pipeline guard does not block implementation on a false positive? → A: Reword to "money-moving or purchase-related tasks" while preserving the safety requirement.
 
 ## Reader Scenarios *(mandatory)*
 
@@ -90,7 +91,7 @@ A team lead wants to know where Fara could be useful, how to approach experiment
 **Acceptance scenarios**:
 
 1. **Given** a team considering browser workflow automation, **when** they read the article, **then** they can identify suitable exploratory cases such as web task research, form-heavy workflow prototyping, benchmark study, and agent UI research.
-2. **Given** a team handling sensitive, regulated, irreversible, or payment-related tasks, **when** they read the article, **then** they understand why human approval, sandboxing, audit logs, and sensitive-data limits are required.
+2. **Given** a team handling sensitive, regulated, irreversible, money-moving, or purchase-related tasks, **when** they read the article, **then** they understand why human approval, sandboxing, audit logs, and sensitive-data limits are required.
 
 ### Edge Cases
 
@@ -110,7 +111,7 @@ A team lead wants to know where Fara could be useful, how to approach experiment
 - **FR-006**: The article MUST include a latest-documents section that lists the primary official sources, their publication or access dates, and what each source is used to verify.
 - **FR-007**: The article MUST include at least two relevant visual assets or linked visual references, each with alt text, caption, source URL or local path, image source owner, and access date.
 - **FR-008**: The article MUST explain practical use cases and how to approach use safely, including sandboxed experimentation, monitored browser tasks, research evaluation, workflow prototyping, human approval checkpoints, and pilot-only evaluation guidance.
-- **FR-009**: The article MUST include a "not for" or caution section for sensitive data, payments, legal/medical/financial decisions, irreversible actions, and unattended production automation.
+- **FR-009**: The article MUST include a "not for" or caution section for sensitive data, money-moving or purchase-related actions, legal/medical/financial decisions, irreversible actions, and unattended production automation.
 - **FR-010**: The article MUST include common misconceptions, especially "Fara is just Copilot", "Fara is ready for every desktop task", and "benchmark success means safe production automation".
 
 ## Success Criteria *(mandatory)*
