@@ -1,0 +1,16 @@
+{
+  "feature_dir": "/projects/company/kami-tech-wiki/specs/026-microsoft-fara-microsoft-fara",
+  "mode": "auto-implement",
+  "stage": "guard",
+  "status": "blocked",
+  "blocked_reason": "Guard blocked auto-implementation: safety_keyword matched payment. The match appears in payment-related caution language, but the guard contract blocks auto-implement mode on this keyword.",
+  "stages_completed": [
+    "analyze",
+    "checklist",
+    "clarify",
+    "plan",
+    "specify",
+    "tasks"
+  ],
+  "timestamp": "2026-05-28T11:34:48+09:00"
+}
