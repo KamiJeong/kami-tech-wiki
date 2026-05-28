@@ -139,3 +139,13 @@ task list는 인벤토리, navigation 노출, Spec Kit/일반 문서 경계, 누
 - .gitignore — 구현 전 setup verification에 따른 누락 ignore 패턴 보강
 
 이 작업은 canonical audit 산출물 구현이며 reader-facing wiki 콘텐츠/메뉴 변경이 아니므로 Slack 알림은 전송하지 않음.
+
+## [2026-05-28 10:30] create | Storybook 개요
+
+생성 범위:
+- wiki/ko/storybook/README.md — Storybook 섹션 개요
+- wiki/ko/storybook/index.md — Storybook, 디자인 시스템, 주요 기능, Storybook MCP, Figma 기반 AI Native Development 3가지 케이스, Claude Code/Codex CLI 추론 흐름, 예상 토큰 소비량, 도입 사례를 설명하는 한국어 초안
+- specs/025-storybook-https-storybook/ — Spec Kit 산출물
+
+wiki/index.md 및 wiki/ko/SUMMARY.md 업데이트 완료.
+Sources: Storybook docs/blog, Figma Dev Mode docs/blog, Anthropic Claude Code MCP docs, OpenAI Codex CLI docs/repository.

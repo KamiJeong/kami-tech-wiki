@@ -29,6 +29,10 @@
 
 - [[Atlassian Rovo란 무엇인가?]] — Jira, Confluence, Compass 맥락에서 검색·채팅·에이전트·Studio·MCP Server를 제공하는 Atlassian AI 제품군 개요 (updated: 2026-05-28, sources: 6)
 
+### Storybook
+
+- [[Storybook이란 무엇인가?]] — Storybook, 디자인 시스템, Storybook MCP, Figma 기반 AI Native Development 워크플로우와 토큰 사용 추정 비교 (updated: 2026-05-28, sources: 15)
+
 ### Codex
 
 - [[Codex 소개]] — OpenAI의 AI 소프트웨어 엔지니어링 도구. 클라우드 에이전트와 CLI 두 가지 형태로 자연어 기반 코드 생성·수정·실행 지원 (updated: 2026-05-18, sources: 1)
