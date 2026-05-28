@@ -1,0 +1,19 @@
+{
+  "feature_dir": "specs/025-storybook-https-storybook",
+  "mode": "auto-implement",
+  "stage": "done",
+  "status": "done",
+  "stages_completed": [
+    "specify",
+    "clarify",
+    "checklist",
+    "plan",
+    "tasks",
+    "analyze",
+    "guard",
+    "implement",
+    "review"
+  ],
+  "timestamp": "2026-05-28T10:35:21+09:00",
+  "pr_url": "https://github.com/KamiJeong/kami-tech-wiki/pull/30"
+}
