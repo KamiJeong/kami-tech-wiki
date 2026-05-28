@@ -1,0 +1,9 @@
+{
+  "stage": "human-review",
+  "status": "blocked",
+  "blocked_reason": "Draft PR created (https://github.com/KamiJeong/kami-tech-wiki/pull/24); remaining gate is human editorial review tasks T097-T100. Slack notification was removed from this feature gate by user decision on 2026-05-22.",
+  "pr_url": "https://github.com/KamiJeong/kami-tech-wiki/pull/24",
+  "commit_sha": "1f14c6202c17fef75a8807408cf504b4529fb869",
+  "stages_completed": ["specify", "clarify", "checklist", "plan", "tasks", "analyze", "guard", "implement", "review"],
+  "timestamp": "2026-05-22T05:43:08Z"
+}

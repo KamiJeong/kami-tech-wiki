@@ -1,0 +1,96 @@
+{
+  "slug": "gitbook-spec-kit",
+  "description": "현재 프로젝트의 문서 시스템을 최신 기준으로 재정비하고, 문서 구조와 노출 방식을 최적화하기 위한 명세를 작성한다. 기존 문서 인벤토리 작성, 문서 메뉴 구조 최적화, 문서 최신화 기준 정의, spec-kit 관련 문서 처리 기준, 누락 문서 처리 기준, 삭제/보류/아카이브 기준, 현재 문서 인벤토리/문서별 처리 방침/개선 메뉴 구조/링크문서 처리/spec-kit 분리 기준/누락 문서 계획/삭제 또는 보류 목록/최신화 체크리스트/향후 유지보수 기준을 정의한다.",
+  "strategy": "foundation-first-then-parallel",
+  "created_at": "2026-05-28T09:03:11+09:00",
+  "updated_at": "2026-05-28T09:03:11+09:00",
+  "slices": {
+    "inventory-status-slice": {
+      "id": "inventory-status-slice",
+      "name": "Document Inventory and Status Taxonomy",
+      "description": "Create the current document inventory and define the shared status/treatment taxonomy for update, delete, hold, archive, missing, and spec-kit relevance decisions.",
+      "feature_dir": "specs/<NNN>-document-inventory-status",
+      "branch": "<NNN>-document-inventory-status",
+      "state": "pending",
+      "pipeline_stage": "specify",
+      "depends_on": [],
+      "conflicts_with": [],
+      "is_safety_sensitive": false,
+      "pr_url": null,
+      "pr_base_branch": null,
+      "test_results_path": null,
+      "commit_sha": null
+    },
+    "navigation-link-slice": {
+      "id": "navigation-link-slice",
+      "name": "Navigation Menu and Link Exposure Plan",
+      "description": "Optimize GitBook and document-menu structure, decide how link-only documents should be exposed, and define cross-document link cleanup requirements.",
+      "feature_dir": "specs/<NNN>-navigation-link-exposure",
+      "branch": "<NNN>-navigation-link-exposure",
+      "state": "pending",
+      "pipeline_stage": "specify",
+      "depends_on": [
+        "inventory-status-slice"
+      ],
+      "conflicts_with": [],
+      "is_safety_sensitive": false,
+      "pr_url": null,
+      "pr_base_branch": null,
+      "test_results_path": null,
+      "commit_sha": null
+    },
+    "lifecycle-governance-slice": {
+      "id": "lifecycle-governance-slice",
+      "name": "Freshness and Maintenance Governance",
+      "description": "Define latestness checks, spec-kit separation rules, missing-document handling, deletion/hold/archive policy, and the future maintenance checklist.",
+      "feature_dir": "specs/<NNN>-freshness-maintenance-governance",
+      "branch": "<NNN>-freshness-maintenance-governance",
+      "state": "pending",
+      "pipeline_stage": "specify",
+      "depends_on": [
+        "inventory-status-slice"
+      ],
+      "conflicts_with": [],
+      "is_safety_sensitive": false,
+      "pr_url": null,
+      "pr_base_branch": null,
+      "test_results_path": null,
+      "commit_sha": null
+    }
+  },
+  "batches": [
+    {
+      "batch_number": 1,
+      "slice_ids": [
+        "inventory-status-slice"
+      ],
+      "is_parallel": false
+    },
+    {
+      "batch_number": 2,
+      "slice_ids": [
+        "navigation-link-slice",
+        "lifecycle-governance-slice"
+      ],
+      "is_parallel": true
+    }
+  ],
+  "dirty_files_baseline": [
+    ".specify/feature.json",
+    "CLAUDE.md",
+    ".agent/",
+    ".agents/",
+    ".codex/",
+    ".specify/intake/gitbook-documentation-tech-bridge/conflict-matrix.md",
+    ".specify/intake/gitbook-documentation-tech-bridge/execution-plan.md",
+    ".specify/intake/gitbook-documentation-tech-bridge/slice-dependency-graph.md",
+    ".specify/intake/make-wiki-what/conflict-matrix.md",
+    ".specify/intake/make-wiki-what/execution-plan.md",
+    ".specify/intake/make-wiki-what/slice-dependency-graph.md",
+    "AGENTS.md",
+    "commands/",
+    "specs/010-speckit-multi-slice-pr/",
+    "specs/021-create-replace-multilingual/pipeline-lock.json",
+    "specs/021-create-replace-multilingual/pipeline-state.json"
+  ]
+}
