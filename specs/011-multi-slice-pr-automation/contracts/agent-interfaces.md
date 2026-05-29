@@ -162,8 +162,9 @@ SCHEDULER_RESULT: <slug> | <strategy> | <slice_count> | PASS|STOP_AND_ASK
 
 **Checks** (in order):
 1. `commit_sha` present in `slice-state.json` → exit 1 if missing
-2. `git push -u origin <current-branch>` → exit 1 if push fails
-3. `gh` CLI available → exit 1 with graceful warning if missing
-4. `gh auth status` → exit 1 with graceful warning if unauthenticated
+2. Run local wiki validation before push: markdownlint on `wiki/**/*.md`, `validate-summary-links.sh wiki/ko`, and `validate-wiki.sh` → exit 1 if validation fails
+3. `git push -u origin <current-branch>` → exit 1 if push fails
+4. `gh` CLI available → exit 1 with graceful warning if missing
+5. `gh auth status` → exit 1 with graceful warning if unauthenticated
 
 **Output**: JSON `{"result":"PASS|FAIL","reason":"...","branch_pushed":true|false}`

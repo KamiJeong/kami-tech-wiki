@@ -54,13 +54,13 @@ A reader wants an up-to-date explanation based on official Microsoft documentati
 
 **Why this priority**: The request explicitly asks for the latest document-based explanation, and Fara is a fast-changing research area.
 
-**Completion check**: The reader can identify which claims are current as of 2026-05-28, which official sources support them, and which capabilities are still research-preview or availability-dependent.
+**Completion check**: The reader can identify which claims are current as of the implementation access date, which official sources support them, and which capabilities are still research-preview or availability-dependent.
 
 **Acceptance scenarios**:
 
 1. **Given** Microsoft Research and GitHub sources with different publication dates, **when** the reader checks the article, **then** they can see the latest dated state of Fara1.5, Fara-7B, model availability, safety guidance, and benchmark context.
 2. **Given** a reader comparing several secondary news articles, **when** they read the wiki page, **then** they can rely on official Microsoft, GitHub, model-card, and research-paper sources as the factual baseline.
-3. **Given** a source that may have changed since the spec was written, **when** the article is implemented, **then** the implementer re-checks the official source live and records either the publication date or the 2026-05-28 access date used for the claim.
+3. **Given** a source that may have changed since the spec was written, **when** the article is implemented, **then** the implementer re-checks the official source live and records either the publication date or the implementation access date used for the claim.
 
 ---
 
@@ -104,7 +104,7 @@ A team lead wants to know where Fara could be useful, how to approach experiment
 ## Functional Requirements *(mandatory)*
 
 - **FR-001**: The article MUST explain Microsoft Fara as Microsoft Research computer-use-agent model work rather than a generic chatbot or ordinary Microsoft 365 Copilot feature.
-- **FR-002**: The article MUST explain the relationship between Fara-7B and the newer Fara1.5 family using latest official documentation available on 2026-05-28.
+- **FR-002**: The article MUST explain the relationship between Fara-7B and the newer Fara1.5 family using latest official documentation verified on the implementation access date.
 - **FR-003**: The article MUST explain the core computer-use-agent idea in plain language: screenshots or visual interface perception, coordinate-based actions, multi-step task trajectories, and browser or software interaction.
 - **FR-004**: The article MUST explain why Fara emphasizes smaller or efficient agentic models, including local or lower-latency experimentation where official sources support those claims.
 - **FR-005**: The article MUST summarize documented capabilities, documented limits, availability status, and safety guidance without promising unsupported production readiness.
@@ -154,7 +154,7 @@ A team lead wants to know where Fara could be useful, how to approach experiment
 - **SR-002**: Use the official `microsoft/fara` GitHub repository for Fara-7B, installation, demos, benchmark context, safety notes, and repository update context.
 - **SR-003**: Use the Fara-7B arXiv paper for research framing, FaraGen, benchmark claims, and open-weight claims.
 - **SR-004**: Use official Microsoft Foundry, Hugging Face, or model-card sources for model availability and usage constraints when those claims appear.
-- **SR-005**: Date fast-changing claims as "2026-05-28 기준" or with a more specific source publication date when available.
+- **SR-005**: Date fast-changing claims with the implementation access date or with a more specific source publication date when available.
 - **SR-006**: Prefer official Microsoft, Microsoft Research, GitHub, arXiv, Microsoft Foundry, and Hugging Face model-card sources over secondary commentary.
 - **SR-007**: Image assets MUST come from official Microsoft/Microsoft Research/GitHub/model-card pages, locally captured demo screenshots, or original explanatory diagrams; each image MUST include owner, URL/path, and access date.
 - **SR-008**: Implementation MUST re-check primary official sources live on the implementation date before drafting, because Fara availability, model cards, benchmark notes, and safety guidance are fast-changing.

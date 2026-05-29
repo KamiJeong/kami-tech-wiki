@@ -35,6 +35,11 @@
 * [Storybook 개요](storybook/README.md)
 * [Storybook이란 무엇인가?](storybook/index.md)
 
+## Microsoft Fara
+
+* [Microsoft Fara 개요](microsoft-fara/README.md)
+* [Microsoft Fara란 무엇인가?](microsoft-fara/index.md)
+
 ## Codex
 
 * [Codex 개요](codex/README.md)
