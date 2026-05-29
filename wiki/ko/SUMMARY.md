@@ -14,6 +14,7 @@
 * [Introduction](openui/introduction.md)
 * [Overview](openui/overview.md)
 * [Architecture](openui/architecture.md)
+* [OpenUI 실시간 개인화 화면 사례 검토](openui/personalization-case-reference.md)
 * [Quickstart](openui/quickstart.md)
 * [Chat Introduction](openui/chat-introduction.md)
 * [Chat GenUI](openui/chat-genui.md)

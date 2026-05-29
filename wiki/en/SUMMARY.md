@@ -9,6 +9,7 @@
 * [Introduction](openui/introduction.md)
 * [Overview](openui/overview.md)
 * [Architecture](openui/architecture.md)
+* [OpenUI Real-Time Personalization Case Reference](openui/personalization-case-reference.md)
 * [Quickstart](openui/quickstart.md)
 * [Chat Introduction](openui/chat-introduction.md)
 * [Chat GenUI](openui/chat-genui.md)
