@@ -149,3 +149,14 @@ task list는 인벤토리, navigation 노출, Spec Kit/일반 문서 경계, 누
 
 wiki/index.md 및 wiki/ko/SUMMARY.md 업데이트 완료.
 Sources: Storybook docs/blog, Figma Dev Mode docs/blog, Anthropic Claude Code MCP docs, OpenAI Codex CLI docs/repository.
+
+## [2026-05-29 09:53] ingest | Microsoft Fara 개요
+
+생성/갱신 범위:
+- wiki/ko/microsoft-fara/README.md — Microsoft Fara 섹션 개요
+- wiki/ko/microsoft-fara/index.md — Fara-7B, Fara1.5, 컴퓨터 사용 에이전트 구조, 공식 출처, 시각 참고 자료, 활용 가능성과 안전 제한을 설명하는 한국어 초안
+- wiki/glossary/microsoft-fara.md — Microsoft Fara 관련 용어와 한국어/영어/일본어 기준 표현
+- wiki/index.md, wiki/ko/SUMMARY.md — Microsoft Fara 항목 추가
+- specs/026-microsoft-fara-microsoft-fara/review-gates.md — 품질 게이트와 human review 대기 상태 기록
+
+출처 검증: 2026-05-29 기준 Microsoft Research, Microsoft Foundry, GitHub microsoft/fara, arXiv, Hugging Face 공식 자료를 실시간 확인했다. Korean-only 초안은 `draft`로 유지하며 영어/일본어 parity와 human editorial review는 후속 필수 작업으로 남긴다.

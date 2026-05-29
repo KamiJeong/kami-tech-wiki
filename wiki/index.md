@@ -33,6 +33,10 @@
 
 - [[Storybook이란 무엇인가?]] — Storybook, 디자인 시스템, Storybook MCP, Figma 기반 AI Native Development 워크플로우와 토큰 사용 추정 비교 (updated: 2026-05-28, sources: 15)
 
+### Microsoft Fara
+
+- [[Microsoft Fara란 무엇인가?]] — Microsoft Research의 컴퓨터 사용 에이전트 모델 계열인 Fara-7B와 Fara1.5, 활용 가능성과 안전한 파일럿 조건을 설명하는 한국어 초안 (updated: 2026-05-29, sources: 0)
+
 ### Codex
 
 - [[Codex 소개]] — OpenAI의 AI 소프트웨어 엔지니어링 도구. 클라우드 에이전트와 CLI 두 가지 형태로 자연어 기반 코드 생성·수정·실행 지원 (updated: 2026-05-18, sources: 1)
