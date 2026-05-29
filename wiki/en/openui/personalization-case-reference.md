@@ -108,4 +108,3 @@ Treat OpenUI as a 2-4 week proof-of-concept candidate, not as an immediate platf
 ## Advanced Notes
 
 The official OpenUI architecture separates generation from execution: the LLM generates the wiring, and the runtime executes queries, mutations, and state changes. A serious PoC should compare this pattern against a design where every click goes back through the LLM, especially for latency and cost.
-

@@ -26,4 +26,3 @@ This multilingual glossary supports the OpenUI personalization case-reference ar
 | Recommendation system | 추천 시스템 | Recommendation system | 推薦システム | A system that selects or ranks items a user is likely to find relevant. |
 | Prompt | 프롬프트 | Prompt | プロンプト | The instruction or context given to an AI model. |
 | Large language model | 대규모 언어 모델 | Large language model | 大規模言語モデル | The AI model class commonly abbreviated as LLM. |
-

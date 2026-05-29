@@ -159,3 +159,11 @@ Sources: Storybook docs/blog, Figma Dev Mode docs/blog, Anthropic Claude Code MC
 - specs/027-openui-https-www/review-gates.md — 출처 검증, 사례 분류, no-split 판단, Slack skip, 품질 게이트 기록
 
 출처 검증: 2026-05-28 기준 OpenUI 공식 문서/GitHub와 Netflix, Spotify, TikTok, YouTube, Amazon, Airbnb, Duolingo, Stitch Fix, AWS 문서를 실시간 확인했다. 공개 근거가 없는 사이트는 OpenUI 사용 사례로 표현하지 않고 비교 사례로 라벨링했다.
+
+## [2026-05-29 09:07] lint | OpenUI Personalization Markdown lint fix
+
+수정 범위:
+- wiki/ko/openui/personalization-case-reference.md, wiki/en/openui/personalization-case-reference.md, wiki/ja/openui/personalization-case-reference.md — EOF의 연속 빈 줄 제거
+- wiki/glossary/openui-personalization-terms.md — EOF의 연속 빈 줄 제거
+
+Markdown lint MD012 오류 수정만 수행했으며 reader-facing 내용은 변경하지 않았다. 위키 콘텐츠 인제스트/업데이트가 아니므로 Slack 알림은 전송하지 않음.
