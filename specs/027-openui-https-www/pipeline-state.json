@@ -1,0 +1,9 @@
+{
+  "feature_dir": "/Users/kamijeong/Projects/kami-tech-wiki/specs/027-openui-https-www",
+  "mode": "auto-implement",
+  "stage": "done",
+  "status": "done",
+  "stages_completed": ["specify", "clarify", "checklist", "plan", "tasks", "analyze", "guard", "implement", "review"],
+  "timestamp": "2026-05-28T16:29:00+09:00",
+  "pr_url": "https://github.com/KamiJeong/kami-tech-wiki/pull/33"
+}
