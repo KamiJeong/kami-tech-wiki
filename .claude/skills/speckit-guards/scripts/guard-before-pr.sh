@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # guard-before-pr.sh — Pre-PR safety guard for multi-slice orchestration
 #
-# Checks: commit_sha present, branch push, gh CLI availability and auth
+# Checks: commit_sha present, wiki validation, branch push, gh CLI availability and auth
 #
 # Usage:
 #   guard-before-pr.sh --slice-id <id> --epic-slug <slug> --base-branch <branch>
@@ -52,7 +52,24 @@ if [[ -z "$COMMIT_SHA" ]]; then
 fi
 
 # ---------------------------------------------------------------------------
-# Check 2: Push branch to remote (FR-014)
+# Check 2: Validate wiki changes before push
+# ---------------------------------------------------------------------------
+VALIDATION_LOG="$(mktemp)"
+if npx markdownlint-cli2 --config wiki/.markdownlint.yaml 'wiki/**/*.md' >"$VALIDATION_LOG" 2>&1 \
+    && bash .wiki/scripts/validate-summary-links.sh wiki/ko >>"$VALIDATION_LOG" 2>&1 \
+    && bash .wiki/scripts/validate-wiki.sh >>"$VALIDATION_LOG" 2>&1; then
+    :
+else
+    VALIDATION_ERROR="$(cat "$VALIDATION_LOG" || echo "unknown validation error")"
+    rm -f "$VALIDATION_LOG"
+    printf '{"result":"FAIL","reason":"validation failed before push: %s","branch_pushed":false}\n' \
+        "$(echo "$VALIDATION_ERROR" | tr '"' "'" | tr '\n' ' ' | cut -c 1-1200)"
+    exit 1
+fi
+rm -f "$VALIDATION_LOG"
+
+# ---------------------------------------------------------------------------
+# Check 3: Push branch to remote (FR-014)
 # ---------------------------------------------------------------------------
 CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "unknown")"
 
@@ -66,7 +83,7 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# Check 3: gh CLI availability (graceful degradation)
+# Check 4: gh CLI availability (graceful degradation)
 # ---------------------------------------------------------------------------
 if ! command -v gh >/dev/null 2>&1; then
     printf '{"result":"FAIL","reason":"GitHub CLI (gh) not found — PR creation skipped. Commits are preserved on branch %s","branch_pushed":%s}\n' \
@@ -75,7 +92,7 @@ if ! command -v gh >/dev/null 2>&1; then
 fi
 
 # ---------------------------------------------------------------------------
-# Check 4: gh authentication
+# Check 5: gh authentication
 # ---------------------------------------------------------------------------
 if ! gh auth status >/dev/null 2>&1; then
     printf '{"result":"FAIL","reason":"GitHub CLI is not authenticated (run: gh auth login) — PR creation skipped. Commits are preserved on branch %s","branch_pushed":%s}\n' \
